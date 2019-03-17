@@ -4,9 +4,11 @@ The thought is that we will have four weekly "assignments" in the runup to the u
 
 We want to do this to give everyone a chance to arrive at the unconf in roughly the same shape, confident to get started.
 
+We should emphasize that if *you* are experienced with RStudio, R, git, and GitHub, and you like your current set-up, please proceed undisturbed (as Jenny Bryan might say).
+
 The current thought for the weekly assignments are:
 
-- Week 0: RStudio and GitHub
+- Week 0: [RStudio and GitHub](00-rstudio-github/README.md)
 - Week 1: R and git
 - Week 2: Rtools, devtools, and usethis (oh my)
 - Week 3: Github PAT and checkover
