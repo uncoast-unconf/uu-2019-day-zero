@@ -74,7 +74,7 @@ class: inverse
 --
 ### Check then, create a new GitHub issue:
 
--`https://github.com/uncoast-unconf/uu-2019-day-zero/issues`
+`https://github.com/uncoast-unconf/uu-2019-day-zero/issues`
 
 --
 ## OR
