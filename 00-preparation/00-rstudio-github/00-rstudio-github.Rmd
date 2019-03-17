@@ -66,7 +66,7 @@ options(htmltools.dir.version = FALSE)
 ---
 class: inverse
 
-# Questions? Problenms?
+# Questions? Problems?
 
 --
 ## If **you** are a part of Uncoast Unconf 2019:
