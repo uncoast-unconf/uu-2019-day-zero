@@ -7,7 +7,7 @@ The goal of uu-2019-day-zero is to serve as repository for our day-zero workshop
 
 The structure of the repository will be "not entirely stable" for the next little while as we, the organizers, sort it out.
 
-
+- [Day-zero preparation](00-preparation/README.md)
 
 
 

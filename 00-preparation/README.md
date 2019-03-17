@@ -6,10 +6,10 @@ We want to do this to give everyone a chance to arrive at the unconf in roughly 
 
 The current thought for the weekly assignments are:
 
-- Week 1: RStudio and GitHub
-- Week 2: R and git
-- Week 3: Rtools, devtools, and usethis (oh my)
-- Week 4: Github PAT and checkover
+- Week 0: RStudio and GitHub
+- Week 1: R and git
+- Week 2: Rtools, devtools, and usethis (oh my)
+- Week 3: Github PAT and checkover
 
 Each "week" will have an entry on a page at the main Unconf site. Each week will also have a screencast demonstrating the tasks. 
 
