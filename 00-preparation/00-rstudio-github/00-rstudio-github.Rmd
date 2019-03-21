@@ -59,7 +59,7 @@ options(htmltools.dir.version = FALSE)
 ### GitHub
 
 - do you have an account? 
-- if needed, let's get one
+- if needed, let's get one (need only a free account)
 - do you have access to your login credentials?
 - **verification**: say hello on a GitHub issue
 
