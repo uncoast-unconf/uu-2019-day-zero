@@ -10,3 +10,8 @@ output:
       highlightLines: true
       countIncrementalSlides: false
 ---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
