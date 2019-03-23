@@ -4,7 +4,7 @@ Our goal is for everyone's computer to have a "sufficiently-current" version of 
 
 Accordingly, we are encouraging folks to have a version of R >= 3.4, and to have git accessible from the command-line.
 
-As usual, we refer to Jenny Bryan's [Happy Git With R](https://happygitwithr.com) for both [R installation](https://happygitwithr.com/install-r-rstudio.html) and [git installation](https://happygitwithr.com/install-git.html).
+As usual, we refer to Jenny Bryan et al's [Happy Git and GitHub for the useR](https://happygitwithr.com) for both [R installation](https://happygitwithr.com/install-r-rstudio.html) and [git installation](https://happygitwithr.com/install-git.html).
 
 ## R
 
@@ -44,14 +44,14 @@ Before installing anything, try the **Verification** - if it works, no need to i
 
 If you are on Windows, we recommend you install [Git for Windows](https://git-for-windows.github.io/).
 
-Following [Happy Git with R's adivce](https://happygitwithr.com/install-git.html#install-git-windows):
+Following [Happy Git's adivce](https://happygitwithr.com/install-git.html#install-git-windows):
 
 > - **NOTE:** When asked about “Adjusting your PATH environment”, make sure to select “Git from the command line and also from 3rd-party software”. Otherwise, we believe it is good to accept the defaults.
 > - Note that RStudio for Windows prefers for Git to be installed below `C:/Program Files` and this appears to be the default. This implies, for example, that the Git executable on my Windows system is found at `C:/Program Files/Git/bin/git.exe`. Unless you have specific reasons to otherwise, follow this convention.
 
 ### macOS
 
-Again, we follow [Happy Git with R](https://happygitwithr.com/install-git.html#macos).
+Again, we follow [Happy Git](https://happygitwithr.com/install-git.html#macos).
 
 The neat thing about asking macOS about our git version is that it will offer to install git for us if it is not installed.
 
