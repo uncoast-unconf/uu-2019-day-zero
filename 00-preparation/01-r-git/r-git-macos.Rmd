@@ -9,6 +9,7 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+      ratio: "16:9"
 ---
 
 ```{r setup, include=FALSE}
@@ -24,6 +25,12 @@ options(htmltools.dir.version = FALSE)
 --
 
 ### This week: R and git installation
+
+--
+
+### Reference: *Happy Git and GitHub for the useR*, Jenny Bryan et al.
+
+### https://happygitwithr.com/
 
 ---
 class: inverse

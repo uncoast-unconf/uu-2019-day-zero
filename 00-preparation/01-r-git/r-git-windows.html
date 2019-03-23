@@ -4,8 +4,8 @@
     <title>Uncoast Unconf Preparation</title>
     <meta charset="utf-8">
     <meta name="date" content="2019-03-24" />
-    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
   </head>
   <body>
     <textarea id="source">
@@ -17,12 +17,147 @@ class: center, middle, inverse, title-slide
 
 ---
 
+
+
+
+# Welcome back!
+
+--
+
+### Last week: RStudio IDE and GitHub account
+
+--
+
+### This week: R and git installation
+
+--
+
+### Reference: *Happy Git and GitHub for the useR*, Jenny Bryan et al.
+
+### https://happygitwithr.com/
+
+---
+class: inverse
+
+# Questions? Problems?
+
+--
+## If **you** are a part of Uncoast Unconf 2019:
+
+--
+### Check then, create a new GitHub issue:
+
+`https://github.com/uncoast-unconf/uu-2019-day-zero/issues`
+
+--
+## OR
+
+### Email Ian Lyttle at ian [dot] lyttle [at] se [dot] com
+
+---
+
+# Why are we doing this?
+
+--
+
+### We want all of our computers to be ready to collaborate
+
+--
+
+### Package-development tools work best using recent versions of R
+
+--
+
+### To move code to/from GitHub, we need git
+
+---
+
+# Goals for this week
+
+### R
+
+- what version do you have? In the **R console** pane:
+
+```r
+R.version.string
+```
+
+--
+
+```
+## [1] "R version 3.5.3 (2019-03-22)"
+```
+
+- if you have R 3.5.3, **you're done!** 
+
+--
+
+- if not at least 3.4, update (you might want to update anyway)
+  - if you update more than a minor version, e.g. 3.4 -&gt; 3.5, you have to reinstall your R packages
+
+--
+  
+- To install:
+  - go to [this CRAN page](https://cloud.r-project.org/)
+  - follow the *Download and Install R* link for Windows
+
+---
+
+# Goals for this week
+
+### git installation
+
+- do you have git installed? In the **Terminal** pane:
+
+```
+git --version
+```
+
+--
+
+```
+git version 2.21.0.windows.1
+```
+
+- if you get a response like this, **you're done!**
+
+--
+
+- if not, we suggest you install [Git for Windows](https://git-for-windows.github.io/)
+
+  - When asked about "Adjusting your PATH environment":
+     - select "Git from the command line and also from 3rd-party software". 
+  - Otherwise, select the defaults.
+ 
+---
+class: inverse
+
+# Questions? Problems?
+
+--
+## If **you** are a part of Uncoast Unconf 2019:
+
+--
+### Check then, create a new GitHub issue:
+
+`https://github.com/uncoast-unconf/uu-2019-day-zero/issues`
+
+--
+## OR
+
+### Email Ian Lyttle at ian [dot] lyttle [at] se [dot] com
+
+---
+class: inverse, center, middle
+
+# Thanks, see you next week!
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
 "highlightStyle": "github",
 "highlightLines": true,
-"countIncrementalSlides": false
+"countIncrementalSlides": false,
+"ratio": "16:9"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
