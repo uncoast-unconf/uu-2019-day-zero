@@ -28,6 +28,8 @@ options(htmltools.dir.version = FALSE)
 
 --
 
+### Links are on the page hosting this video
+
 ### Reference: *Happy Git and GitHub for the useR*, Jenny Bryan et al.
 
 ### https://happygitwithr.com/
@@ -81,22 +83,26 @@ R.version.string
 --
 
 ```
-## [1] "R version 3.5.3 (2019-03-22)"
+## [1] "R version 3.5.3 (2019-03-11)"
 ```
 
 - if you have R 3.5.3, **you're done!** 
 
 --
 
-- if not at least 3.4, update (you might want to update anyway)
-  - if you update more than a minor version, e.g. 3.4 -> 3.5, you have to reinstall your R packages
+- if you have 3.4 <= R <= 3.5.2, up to you...
+
+--
+
+- if you have R < 3.4, **please update!**
 
 --
   
-- To install:
-  - go to [this CRAN page](https://cloud.r-project.org/)
+- to get the latest version of R:
+  - go to [https://cloud.r-project.org/](https://cloud.r-project.org/)
   - follow the *Download and Install R* link for Windows
 
+- if you update more than a minor version, e.g. 3.4 -> 3.5, you have to reinstall your R packages
 ---
 
 # Goals for this week
@@ -119,7 +125,7 @@ git version 2.21.0.windows.1
 
 --
 
-- if not, we suggest you install [Git for Windows](https://git-for-windows.github.io/)
+- if not, we suggest you install Git for Windows: [https://gitforwindows.org/](https://gitforwindows.org/)
 
   - When asked about "Adjusting your PATH environment":
      - select "Git from the command line and also from 3rd-party software". 

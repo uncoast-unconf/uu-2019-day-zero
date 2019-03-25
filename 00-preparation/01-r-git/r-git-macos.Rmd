@@ -1,6 +1,6 @@
 ---
 title: "Uncoast Unconf Preparation"
-subtitle: "R and git: MacOS"
+subtitle: "R and git: macOS"
 date: "2019-03-24"
 output:
   xaringan::moon_reader:
@@ -27,6 +27,8 @@ options(htmltools.dir.version = FALSE)
 ### This week: R and git installation
 
 --
+
+### Links are on the page hosting this video
 
 ### Reference: *Happy Git and GitHub for the useR*, Jenny Bryan et al.
 
@@ -81,21 +83,26 @@ R.version.string
 --
 
 ```
-## [1] "R version 3.5.3 (2019-03-22)"
+## [1] "R version 3.5.3 (2019-03-11)"
 ```
 
 - if you have R 3.5.3, **you're done!** 
 
 --
 
-- if not at least 3.4, update (you might want to update anyway)
-  - if you update more than a minor version, e.g. 3.4 -> 3.5, you have to reinstall your R packages
+- if you have 3.4 <= R <= 3.5.2, up to you...
+
+--
+
+- if you have R < 3.4, **please update!**
 
 --
   
-- To install:
-  - go to [this CRAN page](https://cloud.r-project.org/)
+- to get the latest version of R:
+  - go to [https://cloud.r-project.org/](https://cloud.r-project.org/)
   - follow the *Download and Install R* link for macOS
+
+- if you update more than a minor version, e.g. 3.4 -> 3.5, you have to reinstall your R packages
 
 ---
 
@@ -105,7 +112,7 @@ R.version.string
 
 - do you have git installed? In the **Terminal** pane:
 
-```
+```bash
 git --version
 ```
 
