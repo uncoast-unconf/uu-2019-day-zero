@@ -12,7 +12,7 @@ The structure of the repository will be "not entirely stable" for the next littl
 - [Day-zero Preparation](00-preparation/README.md)
 - [Git and GitHub Cornucopia](01-git-github-cornucopia/README.md)
 - [Project Workflows](02-project-workflows/README.md)
-- [Pacakges](03-packages/README.md)
+- [Packages](03-packages/README.md)
 
 
 
