@@ -9,8 +9,8 @@
 **2. Project-oriented workflows**  
 
 - `setwd("path/that/only/works/on/my/machine")`  
-- Staying organized  
-- RStudio Projects
+- Tips for staying organized  
+- RStudio projects
 
 **3. Practice safe paths**  
 
