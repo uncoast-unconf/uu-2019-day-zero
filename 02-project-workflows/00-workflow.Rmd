@@ -1,0 +1,96 @@
+---
+title: "Project Workflow &<br /> Good Practices"
+subtitle: "Writing code for ourselves, our future selves, & others"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-theme.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+
+# install_github("hadley/emo")
+library(emo)
+emo_pray <- emo::ji("pray")
+```
+
+# Workflow Topics
+
+<br />
+
+#### 1. Save the source, not the workspace  
+#### 2. Project-oriented workflows
+#### 3. Practice safe paths
+#### 4. Naming conventions
+#### 5. Debugging
+
+---
+class: inverse2, middle, center
+# Save the source, not <br /> the workspace
+
+---
+## Always start R with a blank slate
+
+
+---
+## Restart R often
+
+---
+## Avoid `rm(list = ls())`
+
+---
+class: inverse2, middle, center
+# Project-oriented workflows
+
+---
+### `setwd("path/that/only/works/on/my/machine")`
+
+
+---
+## Staying organized
+
+---
+## RStudio Projects
+
+---
+class: inverse2, middle, center
+# Practice Safe Paths
+
+---
+background-image: url(https://pbs.twimg.com/media/DtlqyWZVAAIuylm.jpg:large)
+background-size: 800px
+
+---
+## The `here` package
+
+
+---
+class: inverse2, middle, center
+# Naming Conventions
+
+---
+## 3 Principles
+
+1. Machine readable
+2. Human readable 
+3. Plays well with default ordering
+
+---
+## Break logic & output into pieces
+
+
+---
+class: bottom, center
+background-image: url(https://pbs.twimg.com/media/D0ytsBEUYAALz7f.jpg:large)
+background-size: 700px
+background-position: 55% 3%
+
+`r emo_pray` **Huge thanks** `r emo_pray` 
+
+Most of this is built directly from the work of others
