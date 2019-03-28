@@ -18,7 +18,7 @@
 
 **4. Naming conventions**  
 
-- 3 Principles  
+- Three principles  
 - Break logic & output into pieces  
 
 **5. Debugging??**
