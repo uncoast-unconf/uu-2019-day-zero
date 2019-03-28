@@ -1,24 +1,29 @@
-# Project Workflows
+## Project Workflows
 
-**1. Save the source, not the workspace**  
+##### 1. Save the source, not the workspace
 
 - Always start R with a blank slate  
 - Restart R often  
 - Avoid `rm(list = ls())`
 
-**2. Project-oriented workflows**  
+##### 2. Project-oriented workflows
 
 - `setwd("path/that/only/works/on/my/machine")`  
 - Tips for staying organized  
 - RStudio projects
 
-**3. Practice safe paths**  
+##### 3. Practice safe paths
 
 - The `here` package  
 
-**4. Naming conventions**  
+##### 4. Naming conventions
 
 - Three principles  
 - Break logic & output into pieces  
 
-**5. Debugging??**
+##### 5. Debugging??
+
+<br/>
+
+The slide deck for this material can be found [here](00-workflow.html).
+
