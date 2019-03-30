@@ -1,6 +1,9 @@
 # devtools and Rtools
 
-Here's where I will put the links to the slide decks.
+There are a couple of slide decks this week:
+
+- [Review and devtools](00-review-devtools.html), for everyone
+- [Rtools](01-rtools.html), for Windows only (sorry!)
 
 ## Review
 
@@ -53,7 +56,7 @@ If these return without error, **you're done** for the week.
 
 If you are using macOS, this should **just work**.
  
-If you are using Windows, you may have to install RTools (see next section). 
+If you are using Windows, you may have to install Rtools (see next section). 
 
 ## Rtools
 
