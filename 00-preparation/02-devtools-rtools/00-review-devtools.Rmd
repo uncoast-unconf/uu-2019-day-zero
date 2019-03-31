@@ -20,6 +20,8 @@ options(htmltools.dir.version = FALSE)
 
 ### Review
 
+- We want to be ready to collaborate when we get to Des Moines!
+
 - If you're happy with your setup, no need to do anything.
 
 - Reference: [Happy Git and GitHub for the useR](https://happygitwithr.com/), by Jenny Bryan et al.
@@ -28,14 +30,18 @@ options(htmltools.dir.version = FALSE)
 
 - If you have any questions:
 
-  - you can file a [GitHub issue](https://github.com/uncoast-unconf/uu-2019-day-zero/issues/12) 
-  - you can email me at ian [dot] lyttle [at] se [dot] com
+  - you can file a [GitHub issue](https://github.com/uncoast-unconf/uu-2019-day-zero/issues/12), or email ian [dot] lyttle [at] se [dot] com
 
---
+---
+class: inverse
+
+## Welcome Back!
+
+### Review
 
 #### Week of March 17
 
-- RStudio IDE: version > 1.2
+- RStudio IDE: version &ge; 1.2
 
 --
 
@@ -64,7 +70,7 @@ git --version
 
 - R: 
 
-  - Using the **Console** pane, confirm version > 3.4
+  - Using the **Console** pane, confirm version &ge; 3.4
 
 ```r
 R.version.string
@@ -76,13 +82,13 @@ R.version.string
 
 - For building and installing packages, the [devtools](https://devtools.r-lib.org/) package makes our lives a lot easier.
 
-- This is a set of tools that the Tidyverse team use themselves.
+- Tidyverse team use these tools themselves.
 
 --
 
 ### Spoiler alert
 
-On macOS, this should *just work*.
+On macOS, everything should *just work*.
  
 On Windows, you may have to install Rtools. (Sorry!)
 
@@ -112,11 +118,13 @@ devtools::has_devel(debug = TRUE)
 
 If this returns silently, **you're OK**.
 
-**Windows:** if you don't have Rtools, devtools will install it for you - please let it.
+**Windows:** 
+
+- if you don't have Rtools, devtools will install it for you - please let it.
 
 --
 
-**Windows:** when it's done installing, try again.
+- when it's done installing, try again.
 
 ```r
 devtools::has_devel(debug = TRUE)
@@ -139,16 +147,22 @@ devtools::install_github("r-lib/usethis", force = TRUE)
 
 --
 
-If this returns without error, **you're done** for the week.
+This *should* return without error; **you're done** for the week.
+
+--
+
+- if it returns with an error, let me know!
 
 ---
 class: inverse
 
 ## Next week (one more week!)
 
-- Get everything configured
+- Finalize git & GitHub configuration
 
-- Verify it works
+--
+
+- Verify it all works
 
 --
 
@@ -158,8 +172,7 @@ class: inverse
 
 - If you have any questions:
 
-  - you can file a [GitHub issue](https://github.com/uncoast-unconf/uu-2019-day-zero/issues/12) 
-  - you can email me at ian [dot] lyttle [at] se [dot] com
+  - you can file a [GitHub issue](https://github.com/uncoast-unconf/uu-2019-day-zero/issues/12) or email ian [dot] lyttle [at] se [dot] com
 
 --
 
