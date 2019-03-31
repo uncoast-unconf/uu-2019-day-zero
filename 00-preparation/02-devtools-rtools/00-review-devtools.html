@@ -12,11 +12,163 @@
 class: center, middle, inverse, title-slide
 
 # Uncoast Unconf Preparation
-## Review and devtools
+## devtools
 ### 2019-03-31
 
 ---
 
+class: inverse
+
+
+
+## Welcome Back!
+
+### Review
+
+- If you're happy with your setup, no need to do anything.
+
+- Reference: [Happy Git and GitHub for the useR](https://happygitwithr.com/), by Jenny Bryan et al.
+
+--
+
+- If you have any questions:
+
+  - you can file a [GitHub issue](https://github.com/uncoast-unconf/uu-2019-day-zero/issues/12) 
+  - you can email me at ian [dot] lyttle [at] se [dot] com
+
+--
+
+#### Week of March 17
+
+- RStudio IDE: version &gt; 1.2
+
+--
+
+- GitHub account:
+  - you have access to your credentials
+  - please [introduce yourself](https://github.com/uncoast-unconf/uu-2019-day-zero/issues/11), and describe your view of [your role](https://github.com/uncoast-unconf/uu-2019/issues/17)
+
+---
+class: inverse
+
+## Welcome Back!
+
+### Review
+
+#### Week of March 24 
+
+- git:
+
+  - Using the **Terminal** pane, you should get a sensible response: 
+
+```
+git --version
+```
+
+--
+
+- R: 
+
+  - Using the **Console** pane, confirm version &gt; 3.4
+
+```r
+R.version.string
+```
+
+---
+
+## devtools
+
+- For building and working with packages, the [devtools](https://devtools.r-lib.org/) package makes our lives a lot easier
+
+- These are the tools that the Tidyverse team use themselves.
+
+--
+
+### Spoiler alert
+
+On macOS, this should *just work*.
+ 
+On Windows, you may have to install Rtools. (Sorry!)
+
+--
+
+To install devtools, from the **Console** pane:
+
+```r
+install.packages("devtools")
+```
+
+**Windows:** you may get a warning that Rtools is not installed 
+  - you can ignore it **for now**
+
+---
+
+## devtools
+
+### Verification
+
+From the **Console** pane:
+
+```r
+devtools::has_devel(debug = TRUE)
+```
+--
+
+If this returns silently, **you're OK**.
+
+**Windows:** if you don't have Rtools, devtools will install it for you - please let it.
+
+--
+
+**Windows:** when it's done installing, try again.
+
+```r
+devtools::has_devel(debug = TRUE)
+```
+
+--
+
+This *should* return silently; if so, **you're OK**.
+
+---
+
+
+## devtools
+
+### Install a package from GitHub
+
+```r
+devtools::install_github("r-lib/usethis", force = TRUE)
+```
+
+--
+
+If this returns without error, **you're done** for the week.
+
+---
+class: inverse
+
+## Next week (one more week!)
+
+- Get everything configured
+
+- Verify it works
+
+--
+
+- 🚀 Unconf
+
+--
+
+- If you have any questions:
+
+  - you can file a [GitHub issue](https://github.com/uncoast-unconf/uu-2019-day-zero/issues/12) 
+  - you can email me at ian [dot] lyttle [at] se [dot] com
+
+--
+
+## Thanks!
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
