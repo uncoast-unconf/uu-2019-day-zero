@@ -1,0 +1,44 @@
+---
+title: "Uncoast Unconf Preparation"
+subtitle: "devtools"
+date: "2019-03-31"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+## Welcome Back!
+
+### Review
+
+- We want to be ready to collaborate when we get to Des Moines!
+
+--
+
+- If you're happy with your setup, no need to do anything.
+
+--
+
+If you haven't gone through the past three weeks, please do so.
+
+--
+
+- Reference: [Happy Git and GitHub for the useR](https://happygitwithr.com/), by Jenny Bryan et al.
+
+--
+
+- If you have any questions:
+
+  - you can file a [GitHub issue](https://github.com/uncoast-unconf/uu-2019-day-zero/issues/12), or email ian [dot] lyttle [at] se [dot] com
+
+---
+class: inverse
