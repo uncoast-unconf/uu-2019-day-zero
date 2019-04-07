@@ -1,21 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Uncoast Unconf Preparation</title>
+    <meta charset="utf-8">
+    <meta name="date" content="2019-04-07" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Uncoast Unconf Preparation
+## usethis
+### 2019-04-07
+
 ---
-title: "Uncoast Unconf Preparation"
-subtitle: "usethis"
-date: "2019-04-07"
-output:
-  xaringan::moon_reader:
-    lib_dir: libs
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
----
+
 class: inverse
 
-```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
-library("emo")
-```
+
 
 ## Welcome Back!
 
@@ -78,22 +82,22 @@ git_sitrep()
 
 ```
  Git user
- * Name: <unset>
- * Email: <unset>
+ * Name: &lt;unset&gt;
+ * Email: &lt;unset&gt;
  * Vaccinated: FALSE
  usethis + git2r
- * Default usethis protocol: <unset>
+ * Default usethis protocol: &lt;unset&gt;
  * git2r supports SSH: TRUE
- * Credentials: '<usethis + git2r default behaviour>'
+ * Credentials: '&lt;usethis + git2r default behaviour&gt;'
  GitHub
- * Personal access token: <unset>
+ * Personal access token: &lt;unset&gt;
 ```
 --
 ----
 
 - Your response may look different; that's OK.
 
-- First we look for: `Git user` > `Vaccinated`
+- First we look for: `Git user` &gt; `Vaccinated`
 
 ---
 
@@ -119,23 +123,23 @@ git_sitrep()
 
 ```
  Git user
- * Name: <unset>
- * Email: <unset>
+ * Name: &lt;unset&gt;
+ * Email: &lt;unset&gt;
  * Vaccinated: TRUE
  usethis + git2r
- * Default usethis protocol: <unset>
+ * Default usethis protocol: &lt;unset&gt;
  * git2r supports SSH: TRUE
- * Credentials: '<usethis + git2r default behaviour>'
+ * Credentials: '&lt;usethis + git2r default behaviour&gt;'
  GitHub
- * Personal access token: <unset>
+ * Personal access token: &lt;unset&gt;
 ```
 --
 ----
 
 `Git user`:
-- `r emo::ji("check")` `Vaccinated: TRUE`
+- ✅ `Vaccinated: TRUE`
 
-Next we look for: `Git user` > `Name` and `Email`
+Next we look for: `Git user` &gt; `Name` and `Email`
 
 ---
 
@@ -169,21 +173,21 @@ git_sitrep()
  * Email: 'ian.lyttle@schneider-electric.com'
  * Vaccinated: TRUE
  usethis + git2r
- * Default usethis protocol: <unset>
+ * Default usethis protocol: &lt;unset&gt;
  * git2r supports SSH: TRUE
- * Credentials: '<usethis + git2r default behaviour>'
+ * Credentials: '&lt;usethis + git2r default behaviour&gt;'
  GitHub
- * Personal access token: <unset>
+ * Personal access token: &lt;unset&gt;
 ```
 --
 ----
 
 `Git user`:
-- `r emo::ji("check")` `Vaccinated: TRUE`
-- `r emo::ji("check")` `Name:` is correct
-- `r emo::ji("check")` `Email:` is correct
+- ✅ `Vaccinated: TRUE`
+- ✅ `Name:` is correct
+- ✅ `Email:` is correct
 
-Next we look for: `GitHub` > `Personal access token` 
+Next we look for: `GitHub` &gt; `Personal access token` 
 
 ---
 
@@ -261,11 +265,11 @@ usethis::git_sitrep()
  * Email: 'ian.lyttle@schneider-electric.com'
  * Vaccinated: TRUE
  usethis + git2r
- * Default usethis protocol: <unset>
+ * Default usethis protocol: &lt;unset&gt;
  * git2r supports SSH: TRUE
- * Credentials: '<usethis + git2r default behaviour>'
+ * Credentials: '&lt;usethis + git2r default behaviour&gt;'
  GitHub
- * Personal access token: '<found in env var>'
+ * Personal access token: '&lt;found in env var&gt;'
  * User: 'ijlyttle'
  * Name: 'Ian Lyttle'
 ```
@@ -273,9 +277,9 @@ usethis::git_sitrep()
 ----
 
 `GitHub`:
-- `r emo::ji("check")` `Personal access token: '<found in env var>'`
-- `r emo::ji("check")` `User:` is correct
-- `r emo::ji("check")` `Name:` is correct
+- ✅ `Personal access token: '&lt;found in env var&gt;'`
+- ✅ `User:` is correct
+- ✅ `Name:` is correct
 
 ---
 
@@ -333,9 +337,9 @@ git_sitrep()
  usethis + git2r
  * Default usethis protocol: 'https'
  * git2r supports SSH: TRUE
- * Credentials: '<usethis + git2r default behaviour>'
+ * Credentials: '&lt;usethis + git2r default behaviour&gt;'
  GitHub
- * Personal access token: '<found in env var>'
+ * Personal access token: '&lt;found in env var&gt;'
  * User: 'ijlyttle'
  * Name: 'Ian Lyttle'
 ```
@@ -343,7 +347,7 @@ git_sitrep()
 ----
 
 `usethis + git2r`:
-- `r emo::ji("check")` `Default usethis protocol:` either `'https'` or `'ssh'` (your choice)
+- ✅ `Default usethis protocol:` either `'https'` or `'ssh'` (your choice)
 
 ---
 
@@ -354,22 +358,22 @@ git_sitrep()
 ```
 
 `Git user`:
-- `r emo::ji("check")` `Vaccinated: TRUE`
-- `r emo::ji("check")` `Name:` is correct
-- `r emo::ji("check")` `Email:` is correct
+- ✅ `Vaccinated: TRUE`
+- ✅ `Name:` is correct
+- ✅ `Email:` is correct
 
 `usethis + git2r`:
-- `r emo::ji("check")` `Default usethis protocol:` either `'https'` or `'ssh'` (your choice)
+- ✅ `Default usethis protocol:` either `'https'` or `'ssh'` (your choice)
 
 `GitHub`:
-- `r emo::ji("check")` `Personal access token: '<found in env var>'`
-- `r emo::ji("check")` `User:` is correct
-- `r emo::ji("check")` `Name:` is correct
+- ✅ `Personal access token: '&lt;found in env var&gt;'`
+- ✅ `User:` is correct
+- ✅ `Name:` is correct
 
 ---
 class: inverse
 
-### `r emo::ji("party")` `r emo::ji("party")` We have finished our preparations! `r emo::ji("party")` `r emo::ji("party")`
+### 🎈 🎉 We have finished our preparations! 🎈 🥳
 
 --
 
@@ -383,6 +387,54 @@ class: inverse
 
 --
 
-### See you in Des Moines! `r emo::ji("car")` `r emo::ji("airplane")` 
+### See you in Des Moines! 🚗 ✈️ 
 
 ---
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
