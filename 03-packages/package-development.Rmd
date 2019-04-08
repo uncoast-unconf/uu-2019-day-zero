@@ -7,6 +7,7 @@ output:
     lib_dir: libs
     nature:
       highlightStyle: github
+      ratio: "16:9"
       highlightLines: true
       countIncrementalSlides: false
 ---
@@ -14,3 +15,49 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 ```
+
+## Base process
+
+![](workspace/img-verbs/base.png)
+
+---
+
+## End Result
+
+.pull-right[ 
+<!-- ![](workspace/img-nouns/all.png) -->
+
+```{r echo=FALSE, out.width='50%', fig.align='right'}
+knitr::include_graphics("workspace/img-nouns/all.png")
+```
+]
+
+---
+
+## Package framework
+
+![](workspace/img-verbs/framework.png)
+
+---
+
+## Develop
+
+![](workspace/img-verbs/develop.png)
+
+---
+
+## Test
+
+![](workspace/img-verbs/test.png)
+
+---
+
+## Document
+
+![](workspace/img-verbs/document.png)
+
+---
+
+## Summary
+
+![](workspace/img-verbs/all.png)
