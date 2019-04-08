@@ -33,7 +33,7 @@ class: inverse
 
 --
 
-If you haven't gone through the past three weeks, please do so.
+- If you haven't gone through the past three weeks, please do so.
 
 --
 
@@ -107,7 +107,7 @@ git_sitrep()
 
 - Want to prevent committing stuff to git that can contain credentials.
 
-- `git_vaccinates()` adds files to your global git-ignore file.
+- `git_vaccinate()` adds files to your global git-ignore file.
 
 ```r
 git_vaccinate()
@@ -212,11 +212,13 @@ Next we look for: `GitHub` &gt; `Personal access token`
 edit_r_environ()
 ```
 
-- If you already have a `.Renviron` file, save a backup copy.
+- Use this [starter file](https://gist.github.com/ijlyttle/dee4a89c8528cd4a0a319bb7b8cdd51a):
 
-- If you don't have a `.Renviron` file (it opens empty), here's a [starter](https://gist.github.com/ijlyttle/dee4a89c8528cd4a0a319bb7b8cdd51a).
+  - If you already have a `.Renviron` file, save a backup copy, then pick-and-choose useful bits from the starter for your `.Renviron` file.
 
-  - (This `GITHUB_PAT` will not work, you need to get your own)
+  - If you don't have a `.Renviron` file (empty), copy the starter entirely.
+
+- Modify the value of `GITHUB_PAT`; you will need to get your own.
 
 ---
 
@@ -231,7 +233,7 @@ edit_r_environ()
 
 --
 
-```
+```r
 browse_github_pat(description = "your-custom-name-here")
 ```
 
@@ -243,7 +245,7 @@ browse_github_pat(description = "your-custom-name-here")
 
 --
 
-- Copy the PAT to your `.Renviron` file:
+- Copy the PAT into your `.Renviron` file:
 
   - up to you if you want to surround the PAT in quotes
 
@@ -313,19 +315,25 @@ usethis::git_sitrep()
 
 ### How do I make sure I use the git protocol that I expect to?
 
-```
+```r
 usethis::edit_r_profile()
 ```
 
-- If you already have a `.Rprofile` file, save a backup copy.
+Use this [starter file](https://gist.github.com/ijlyttle/dee4a89c8528cd4a0a319bb7b8cdd51a):
 
-- If you don't have a `.Rprofile` file (it opens empty), here's a [starter](https://gist.github.com/ijlyttle/dee4a89c8528cd4a0a319bb7b8cdd51a).
+- If you already have a `.Rprofile` file, save a backup copy, then pick-and-choose useful bits from the starter for your `.Rprofile` file:
 
-  
-- Make sure `.Rprofile` ends with a newline!
+  - in `options()`, set `usethis.protocol = "https"`
+  - if you have set up ssh, and want to keep using it, set to `"ssh"`
+  - other options and startup packages may be interesting
 
+- If you don't have a `.Rprofile` file (empty), copy the starter entirely.
 
-- When you're done editing `.Rprofile`, save it, then restart R.
+ - change to your name, email address, etc.
+
+Make sure `.Rprofile` ends with a newline!
+
+When you're done editing `.Rprofile`, save it, then restart R.
 
 ---
 
@@ -381,7 +389,7 @@ git_sitrep()
 ---
 class: inverse
 
-### 🥳 🎈 We have finished our preparations! 🎂 🎉
+### 🎉 🥳 We have finished our preparations! 🎉 🎉
 
 --
 
