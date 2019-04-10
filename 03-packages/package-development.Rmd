@@ -19,52 +19,121 @@ options(htmltools.dir.version = FALSE)
 
 ## Base process
 
-```{r verb-base, echo=FALSE, out.width='75%', fig.align='center'}
+.teach-left[
+```{r verb-base, echo=FALSE, fig.align='left'}
 knitr::include_graphics("workspace/img-verbs/base.png")
 ```
+]
+
+--
+
+.teach-right[ 
+```{r noun-prelim, echo=FALSE, fig.align='right'}
+knitr::include_graphics("workspace/img-nouns/prelim.png")
+```
+]
 
 ---
 
-## End Result
+## Base process
 
-.pull-right[ 
-```{r noun-all, echo=FALSE, out.width='50%', fig.align='right'}
+.teach-left[
+```{r verb-base-2, echo=FALSE, fig.align='left'}
+knitr::include_graphics("workspace/img-verbs/base.png")
+```
+]
+
+
+.teach-right[ 
+```{r noun-all, echo=FALSE, fig.align='right'}
 knitr::include_graphics("workspace/img-nouns/all.png")
 ```
 ]
 
 ---
 
-## Package framework
+## Create package
 
-```{r verb-framework, echo=FALSE, out.width='75%', fig.align='center'}
+.teach-left[
+```{r verb-create-package, echo=FALSE, fig.align='left'}
+knitr::include_graphics("workspace/img-verbs/create-package.png")
+```
+]
+
+
+.teach-right[ 
+```{r noun-create-package, echo=FALSE, fig.align='right'}
+knitr::include_graphics("workspace/img-nouns/create-package.png")
+```
+]
+
+---
+
+## Create framework
+
+.teach-left[
+```{r verb-framework, echo=FALSE, fig.align='left'}
 knitr::include_graphics("workspace/img-verbs/framework.png")
 ```
+]
 
+
+.teach-right[ 
+```{r noun-framework, echo=FALSE, fig.align='right'}
+knitr::include_graphics("workspace/img-nouns/framework.png")
+```
+]
 
 ---
 
 ## Develop
 
-```{r verb-develop, echo=FALSE, out.width='75%', fig.align='center'}
+.teach-left[
+```{r verb-develop, echo=FALSE, fig.align='left'}
 knitr::include_graphics("workspace/img-verbs/develop.png")
 ```
+]
+
+
+.teach-right[ 
+```{r noun-develop, echo=FALSE, fig.align='right'}
+knitr::include_graphics("workspace/img-nouns/develop.png")
+```
+]
 
 ---
 
 ## Test
 
-```{r verb-test, echo=FALSE, out.width='75%', fig.align='center'}
+.teach-left[
+```{r verb-test, echo=FALSE, fig.align='left'}
 knitr::include_graphics("workspace/img-verbs/test.png")
 ```
+]
+
+
+.teach-right[ 
+```{r noun-test, echo=FALSE, fig.align='right'}
+knitr::include_graphics("workspace/img-nouns/test.png")
+```
+]
 
 ---
 
 ## Document
 
-```{r verb-document, echo=FALSE, out.width='75%', fig.align='center'}
+.teach-left[
+```{r verb-document, echo=FALSE, fig.align='left'}
 knitr::include_graphics("workspace/img-verbs/document.png")
 ```
+]
+
+
+.teach-right[ 
+```{r noun-document, echo=FALSE, fig.align='right'}
+knitr::include_graphics("workspace/img-nouns/document.png")
+```
+]
 
 ---
 
