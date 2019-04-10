@@ -21,7 +21,7 @@
 - Three principles  
 - Break logic & output into pieces  
 
-##### 5. Debugging??
+##### 5. Debugging
 
 <br/>
 

@@ -11,8 +11,12 @@
   float: right;
   width: 20%;
 }
-
-.right-third {
+.left-minus {
+  width: 40%;
+  float: left;
+  padding-top: 1em;
+}
+.right-plus {
   width: 57%;
   float: right;
   padding-top: 1em;
