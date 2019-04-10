@@ -29,7 +29,7 @@ body {
 h1, h2, h3 {
   font-family: Inconsolata;
   font-weight: normal;
-  color: #FF6A4F;
+  color: #fc9f66;
 }
 .remark-slide-content {
   background-color: #fafbfc;
@@ -65,7 +65,7 @@ h1, h2, h3 {
   opacity: 1;
   font-size: 0.9em;
 }
-strong{color:#FF9642;}
+strong{color:#84a9cd;}
 a, a > code {
   color: #b58900;
   text-decoration: none;
@@ -81,26 +81,18 @@ a, a > code {
   background-color: #268bd240;
 }
 .inverse {
-  background-color: #5d5d5a;
+  background-color: #fac375;
   color: #fdf6e3;
   
 }
 .inverse h1, .inverse h2, .inverse h3 {
   color: #fdf6e3;
 }
-.inverse2 {
-  background-color: #14B270;
-  color: #fdf6e3;
-  
-}
-.inverse2 h1, .inverse2 h2, .inverse2 h3 {
-  color: #fdf6e3;
-}
 .title-slide, .title-slide h1, .title-slide h2, .title-slide h3 {
   color: #fdf6e3;
 }
 .title-slide {
-  background-color: #5d5d5a;
+  background-color: #6e7d75;
   
   
   
@@ -122,6 +114,11 @@ a, a > code {
 }
 .right-column {
   width: 75%;
+  float: right;
+  padding-top: 1em;
+}
+.right-third {
+  width: 57%;
   float: right;
   padding-top: 1em;
 }
