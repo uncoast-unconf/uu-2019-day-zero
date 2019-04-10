@@ -1,0 +1,10 @@
+/* extra */
+
+.teach-left {
+  float: left;
+  width: 75%;
+}
+.teach-right {
+  float: right;
+  width: 20%;
+}

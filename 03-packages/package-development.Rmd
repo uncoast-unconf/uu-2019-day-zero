@@ -5,6 +5,7 @@ date: "2019-04-14"
 output:
   xaringan::moon_reader:
     lib_dir: libs
+    css: ["default", "default-fonts", "extra.css"]
     nature:
       highlightStyle: github
       ratio: "16:9"
@@ -18,16 +19,16 @@ options(htmltools.dir.version = FALSE)
 
 ## Base process
 
-![](workspace/img-verbs/base.png)
+```{r verb-base, echo=FALSE, out.width='75%', fig.align='center'}
+knitr::include_graphics("workspace/img-verbs/base.png")
+```
 
 ---
 
 ## End Result
 
 .pull-right[ 
-<!-- ![](workspace/img-nouns/all.png) -->
-
-```{r echo=FALSE, out.width='50%', fig.align='right'}
+```{r noun-all, echo=FALSE, out.width='50%', fig.align='right'}
 knitr::include_graphics("workspace/img-nouns/all.png")
 ```
 ]
@@ -36,28 +37,47 @@ knitr::include_graphics("workspace/img-nouns/all.png")
 
 ## Package framework
 
-![](workspace/img-verbs/framework.png)
+```{r verb-framework, echo=FALSE, out.width='75%', fig.align='center'}
+knitr::include_graphics("workspace/img-verbs/framework.png")
+```
+
 
 ---
 
 ## Develop
 
-![](workspace/img-verbs/develop.png)
+```{r verb-develop, echo=FALSE, out.width='75%', fig.align='center'}
+knitr::include_graphics("workspace/img-verbs/develop.png")
+```
 
 ---
 
 ## Test
 
-![](workspace/img-verbs/test.png)
+```{r verb-test, echo=FALSE, out.width='75%', fig.align='center'}
+knitr::include_graphics("workspace/img-verbs/test.png")
+```
 
 ---
 
 ## Document
 
-![](workspace/img-verbs/document.png)
+```{r verb-document, echo=FALSE, out.width='75%', fig.align='center'}
+knitr::include_graphics("workspace/img-verbs/document.png")
+```
 
 ---
 
 ## Summary
 
-![](workspace/img-verbs/all.png)
+.teach-left[
+```{r verb-all, echo=FALSE, fig.align='left'}
+knitr::include_graphics("workspace/img-verbs/all.png")
+```
+]
+
+.teach-right[ 
+```{r noun-all-summary, echo=FALSE, fig.align='right'}
+knitr::include_graphics("workspace/img-nouns/all.png")
+```
+]
