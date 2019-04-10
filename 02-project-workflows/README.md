@@ -21,9 +21,9 @@
 - Three principles  
 - Break logic & output into pieces  
 
-##### 5. Debugging??
+##### 5. Debugging
 
 <br/>
 
-The slide deck for this material can be found [here](00-workflow.html).
+The slide deck for this material can be found [here](workflow.html).
 

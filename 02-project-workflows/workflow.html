@@ -3,7 +3,8 @@
   <head>
     <title>Project Workflow &amp;  Good Practices</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="xaringan-theme.css" type="text/css" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="extra-theme.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -17,7 +18,7 @@ class: center, middle, inverse, title-slide
 
 
 
-# Workflow Topics
+# Workflow topics
 
 &lt;br /&gt;
 
@@ -47,20 +48,25 @@ Saving code – not workspaces – is incredibly important because it is an abso
 ---
 ## Use an IDE
 
+#### What?
+
 An [integrated development environment](https://en.wikipedia.org/wiki/Integrated_development_environment) (IDE) makes it much easier to follow best practices.
 
 
-Popular IDEs:  
-- RStudio  
-- Emacs + ESS  
-- vim + Nvim-R  
-- Visual Studio + RTVS
+- Popular IDEs include RStudio, Emacs + ESS, vim + Nvim-R, and Visual Studio + RTVS
 
-
+--
 &lt;br /&gt;
-#### This eliminates the temptation to develop code directly in the R Console. 
 
-**Direction of causality**: long-time coders don’t organize their work into self-contained projects and use relative paths because they use an IDE. They use an IDE because it makes it easier to follow standard practices, such as these.
+#### Why?
+
+It helps to eliminate the temptation to develop code directly in the R Console. 
+
+#### Direction of causality:  
+
+- long-time coders don’t organize their work into self-contained projects and use relative paths because they use an IDE.  
+
+- They use an IDE because it makes it easier to follow standard practices, such as these.
 
 (More on this to come)
 
@@ -71,12 +77,12 @@ best practices = develop reproducible code in a .R or .Rmd file
 ## Always start R with a blank slate
 
 .pull-left[
-#### The rules:
+#### What to do:
 When you quit R, do not save the workspace to an `.Rdata` file.  
 
 When you launch, do not reload the workspace from an `.Rdata` file.
 
-#### How to enforce them:
+#### How to do it:
 
 In RStudio, set this via *Tools* &gt; *Global Options*
 
@@ -86,24 +92,26 @@ In RStudio, set this via *Tools* &gt; *Global Options*
 &lt;img src="img/rstudio-workspace.png" height="380px"/&gt;
 ]
 ---
+
+
+.left-minus[
+&lt;img src="img/on-and-off.png" height="500px"/&gt;
+]
+.right-plus[
 ## Restart R often
 
-.pull-left[
-&lt;img src="img/on-and-off-rect.png" height="400px"/&gt;
-]
-.pull-right[
 #### To restart:
 In RStudio, menu item *Session* &gt; *Restart R*
 
-Keyboard shortcut: [Ctrl/Command] + Shift + F10 
+Keyboard shortcut: **[Ctrl/Command] + Shift + F10**
 
 #### To say "re-run all the code up to HERE":  
 
-In an R script, use &lt;br /&gt;[Ctrl/Command] + [Alt/Option] + B 
+In an R script, use &lt;br /&gt;**[Ctrl/Command] + [Alt/Option] + B**
 
-In R markdown, use &lt;br /&gt;[Ctrl/Command] + [Alt/Option] + P 
+In R markdown, use &lt;br /&gt;**[Ctrl/Command] + [Alt/Option] + P**
 
-If you run R from the shell, use Ctrl+D or q() to quit, then restart R.
+If you run R from the shell, use **Ctrl+D** or **q()** to quit, then restart R.
 
 ]
 
@@ -168,7 +176,7 @@ background-image: url(https://pics.me.me/look-into-your-hard-drive-and-open-your
 background-size: 500px
 background-position: 0% 50%
 
-.right-third[
+.right-plus[
 ### `setwd("path/that/only/works/on/my/machine")`
 The chance of the `setwd()` command having the desired effect – making the file paths work – for anyone besides its author is 0%. 
 
@@ -195,9 +203,9 @@ Use an IDE that supports a project-based workflow. This eliminates the tension b
 ---
 ## Adopt a project-oriented workflow
 
-**Project**= a folder on your computer that holds all the files relevant to that particular piece of work
+**Project** = a folder on your computer that holds all the files relevant to that particular piece of work
 
-**Project-oriented workflow**= a file system discipline
+**Project-oriented workflow** = a file system discipline
 
 - All paths are relative — relative to the project's folder  
 
@@ -238,7 +246,7 @@ class: inverse, center
 
 - identifies your project's files, based on the current working directory at the time when the package is loaded.
 
-`
+
 ---
 ## Create a stable base
 
@@ -296,6 +304,57 @@ class: inverse, center
 ## Styleguide
 
 ---
+background-image: url()
+background-size: 300px
+background-position: 50% 80%
+class: inverse, center
+# Reprex
+
+---
+## Make a reprex in 2 steps
+
+#### 1. Make your code reproducible
+
+- Make sure you capture everything
+
+  - i.e., include any library() calls and create all necessary objects  
+
+- This can be done with the `reprex` package
+
+#### 2. Make it minimal
+
+- Strip away everything that is not directly related to your problem
+
+- Create a much smaller and simpler R object than the one you’re facing in real life 
+
+  - consider using built-in data
+
+
+---
+## The `reprex` package
+
+
+
+Write a bit of code and copy it to the clipboard:
+
+Enter `reprex()` in the R Console. In RStudio, you’ll see a preview of your rendered reprex.
+
+It is now ready and waiting on your clipboard, so you can paste it into, say, a GitHub issue.
+
+If your code is not self-contained, running `reprex()` results in an error.
+
+---
+background-image: url(http://bryanavery.co.uk/wp-content/uploads/2018/11/hero-snapshot-debugger.png)
+background-size: 900px
+background-position: 50% 80%
+class: inverse, center
+# Debugging
+
+---
+## Debugging
+
+![](https://imgs.xkcd.com/comics/fixing_problems.png)
+---
 class: bottom, center
 background-image: url(https://pbs.twimg.com/media/D0ytsBEUYAALz7f.jpg:large)
 background-size: 700px
@@ -309,7 +368,14 @@ Most of this is built directly from the work of others
 class: inverse
 ## Resources
 
-[What They Forgot to Teach You](https://whattheyforgot.org/index.html) by Jenny Bryan &amp; Jim Hester
+[What They Forgot to Teach You](https://whattheyforgot.org/index.html) by Jenny Bryan &amp; Jim Hester  
+
+
+Illustrations by [Allison Horst](https://twitter.com/allison_horst?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)
+
+Heike Hofmann's [585X class](https://stat585-at-isu.github.io/schedule.html) at ISU
+
+[Streamlined workflows in R](https://jules32.github.io/streamlined-workflows/#1) by Julie Lowndes
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
