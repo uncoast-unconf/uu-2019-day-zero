@@ -1,33 +1,28 @@
----
-title: "Project Workflow &<br /> Good Practices"
-subtitle: "Writing code for ourselves, our future selves, & others"
-output:
-  xaringan::moon_reader:
-    lib_dir: libs
-    css: xaringan-theme.css
-    nature:
-      ratio: "16:9"
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project Workflow &amp;  Good Practices</title>
+    <meta charset="utf-8">
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="extra-theme.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Project Workflow &amp;<br /> Good Practices
+## Writing code for ourselves, our future selves, &amp; others
+
 ---
 
-```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
-library(tidyverse)
 
-# install_github("hadley/emo")
-library(emo)
-emo_pray <- emo::ji("pray")
-emo_up <- emo::ji("+1")
-emo_down <- emo::ji("-1")
-```
+
 
 # Workflow Topics
 
-<br />
+&lt;br /&gt;
 
-#### 1. Saving source & blank slates  
+#### 1. Saving source &amp; blank slates  
 #### 2. Project-oriented workflow
 #### 3. Practice safe paths
 #### 4. Naming conventions
@@ -36,7 +31,7 @@ emo_down <- emo::ji("-1")
 
 ---
 class: inverse, center, middle
-# Saving source & blank slates 
+# Saving source &amp; blank slates 
 
 ---
 ## Save the source, not the workspace
@@ -47,7 +42,7 @@ Any individual R process and the associated workspace is disposable.
 
 #### Everything that really matters should be achieved through code that you save. 
 
-<img src=https://whattheyforgot.org/img/if-you-liked-it-you-should-have-saved-the-source-for-it.jpg height="360px"/>
+&lt;img src=https://whattheyforgot.org/img/if-you-liked-it-you-should-have-saved-the-source-for-it.jpg height="360px"/&gt;
 ???
 Saving code – not workspaces – is incredibly important because it is an absolute requirement for reproducibility. 
 ---
@@ -63,7 +58,7 @@ Popular IDEs:
 - Visual Studio + RTVS
 
 
-<br />
+&lt;br /&gt;
 #### This eliminates the temptation to develop code directly in the R Console. 
 
 **Direction of causality**: long-time coders don’t organize their work into self-contained projects and use relative paths because they use an IDE. They use an IDE because it makes it easier to follow standard practices, such as these.
@@ -84,30 +79,30 @@ When you launch, do not reload the workspace from an `.Rdata` file.
 
 #### How to enforce them:
 
-In RStudio, set this via *Tools* > *Global Options*
+In RStudio, set this via *Tools* &gt; *Global Options*
 
 `usethis::use_blank_slate()` prints a reminder about how to do this.
 ]
 .pull-right[
-<img src="img/rstudio-workspace.png" height="380px"/>
+&lt;img src="img/rstudio-workspace.png" height="380px"/&gt;
 ]
 ---
 ## Restart R often
 
 .pull-left[
-<img src="img/on-and-off-rect.png" height="400px"/>
+&lt;img src="img/on-and-off-rect.png" height="400px"/&gt;
 ]
 .pull-right[
 #### To restart:
-In RStudio, menu item *Session* > *Restart R*
+In RStudio, menu item *Session* &gt; *Restart R*
 
 Keyboard shortcut: [Ctrl/Command] + Shift + F10 
 
 #### To say "re-run all the code up to HERE":  
 
-In an R script, use <br />[Ctrl/Command] + [Alt/Option] + B 
+In an R script, use &lt;br /&gt;[Ctrl/Command] + [Alt/Option] + B 
 
-In R markdown, use <br />[Ctrl/Command] + [Alt/Option] + P 
+In R markdown, use &lt;br /&gt;[Ctrl/Command] + [Alt/Option] + P 
 
 If you run R from the shell, use Ctrl+D or q() to quit, then restart R.
 
@@ -118,14 +113,14 @@ If you run R from the shell, use Ctrl+D or q() to quit, then restart R.
 
 This is highly *suggestive* of a non-reproducible workflow.
 
-<br />
+&lt;br /&gt;
 This line is meant to reset things, either to power-cycle the current analysis or to switch from one project to another. But there are better ways to do both:
 
 - To power-cycle the current analysis, restart R!  
 
 - To switch from one project to another, either restart R or, even better, use an IDE with proper support for projects, where each project gets its own R process.
 
-<br />
+&lt;br /&gt;
 #### The problem with `rm(list = ls())` is that, given the intent, it does not go far enough.
 
 ???
@@ -138,8 +133,8 @@ This is highly suggestive of a non-reproducible workflow.
 class: inverse, middle, center
 # Project-oriented workflows
 
-<img src="img/mess.jpg" height="400px"/>
-<img src="img/organized.jpg" height="400px"/>
+&lt;img src="img/mess.jpg" height="400px"/&gt;
+&lt;img src="img/organized.jpg" height="400px"/&gt;
 
 ### LPT: Do this as you go, not "tomorrow" 
 
@@ -161,7 +156,7 @@ class: inverse, middle, center
 
 - The R code someone needs to run on your raw data to get your results, including the explicit `library()` calls to load necessary packages.  
 
-<br />
+&lt;br /&gt;
 
 #### Ideally, you don’t hardwire anything about your workflow into your product. 
 
@@ -220,9 +215,9 @@ The RStudio IDE (capital "P") Project
 
 #### Why?
 
-`r emo_up` They are the same “unit” as a GitHub repo!
+👍 They are the same “unit” as a GitHub repo!
 
-`r emo_up` You can have multiple Projects going at once!
+👍 You can have multiple Projects going at once!
 
 ---
 background-image: url(https://pbs.twimg.com/media/DtlqyWZVAAIuylm.jpg:large)
@@ -244,7 +239,7 @@ class: inverse, center
 
 - identifies your project's files, based on the current working directory at the time when the package is loaded.
 
-`
+
 ---
 ## Create a stable base
 
@@ -265,41 +260,88 @@ class: inverse, center
 3. Plays well with default ordering
 
 ---
-## Break logic & output into pieces
+## Break logic &amp; output into pieces
 
 ---
 ## Staying organized
 
 .pull-left[
-`r emo_up` self-explaining  
+👍 self-explaining  
 
-<br />
-`r emo_up`  
-<br />  
-`r emo_up`   
+&lt;br /&gt;
+👍  
+&lt;br /&gt;  
+👍   
 
 ]
 
 .pull-right[
-`r emo_down` wordy, needy explainers  
+👎 wordy, needy explainers  
 
-<br />
-`r emo_down`   
+&lt;br /&gt;
+👎   
 
-<br />
-`r emo_down`   
+&lt;br /&gt;
+👎   
 
 ]
 
-<!--
-<br /><br />
+&lt;!--
+&lt;br /&gt;&lt;br /&gt;
 .center[
-#### The more **deliberate** you are about where things live, <br /> the **easier** it will be for you & future you, <br /> the **easier** it will be for other people, <br /> the **easier** it will be for other computers.
+#### The more **deliberate** you are about where things live, &lt;br /&gt; the **easier** it will be for you &amp; future you, &lt;br /&gt; the **easier** it will be for other people, &lt;br /&gt; the **easier** it will be for other computers.
 ]
--->
+--&gt;
 
 ---
 ## Styleguide
+
+---
+background-image: url()
+background-size: 300px
+background-position: 50% 80%
+class: inverse, center
+# Reprex
+
+---
+## Make a reprex in 2 steps
+
+#### 1. Make your code reproducible
+
+- Make sure you capture everything
+
+  - i.e., include any library() calls and create all necessary objects  
+
+- This can be done with the `reprex` package
+
+#### 2. Make it minimal
+
+- Strip away everything that is not directly related to your problem
+
+- Create a much smaller and simpler R object than the one you’re facing in real life 
+
+  - consider using built-in data
+
+
+---
+## The `reprex` package
+
+
+
+Write a bit of code and copy it to the clipboard:
+
+Enter `reprex()` in the R Console. In RStudio, you’ll see a preview of your rendered reprex.
+
+It is now ready and waiting on your clipboard, so you can paste it into, say, a GitHub issue.
+
+If your code is not self-contained, running `reprex()` results in an error.
+
+---
+background-image: url(http://bryanavery.co.uk/wp-content/uploads/2018/11/hero-snapshot-debugger.png)
+background-size: 900px
+background-position: 50% 80%
+class: inverse, center
+# Debugging
 
 ---
 class: bottom, center
@@ -307,7 +349,7 @@ background-image: url(https://pbs.twimg.com/media/D0ytsBEUYAALz7f.jpg:large)
 background-size: 700px
 background-position: 55% 3%
 
-`r emo_pray` **Huge thanks** `r emo_pray` 
+🙏 **Huge thanks** 🙏 
 
 Most of this is built directly from the work of others
 
@@ -315,4 +357,58 @@ Most of this is built directly from the work of others
 class: inverse
 ## Resources
 
-[What They Forgot to Teach You](https://whattheyforgot.org/index.html) by Jenny Bryan & Jim Hester
+[What They Forgot to Teach You](https://whattheyforgot.org/index.html) by Jenny Bryan &amp; Jim Hester  
+
+
+Illustrations by [Allison Horst](https://twitter.com/allison_horst?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)
+
+Heike Hofmann's [585X class](https://stat585-at-isu.github.io/schedule.html) at ISU
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

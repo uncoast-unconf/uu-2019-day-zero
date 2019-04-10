@@ -1,0 +1,70 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,400i);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+
+/* extra */
+
+.teach-left {
+  float: left;
+  width: 75%;
+}
+.teach-right {
+  float: right;
+  width: 20%;
+}
+
+.right-third {
+  width: 57%;
+  float: right;
+  padding-top: 1em;
+}
+
+/* Modifications */
+
+body {
+  font-family: Montserrat, 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
+  font-weight: 400;
+  color: #657b83;
+}
+h1, h2, h3 {
+  font-family: Inconsolata;
+  font-weight: normal;
+  color: #fc9f66;
+}
+
+.remark-code, .remark-inline-code {
+  font-family: Inconsolata, 'Lucida Console', Monaco, monospace;
+}
+
+strong{color:#84a9cd;}
+a, a > code {
+  color: #b58900;
+  text-decoration: none;
+}
+
+.inverse {
+  background-color: #fac375;
+  color: #fdf6e3;
+  text-shadow: none;
+}
+.inverse h1, .inverse h2, .inverse h3 {
+  color: #fdf6e3;
+}
+.title-slide, .title-slide h1, .title-slide h2, .title-slide h3 {
+  color: #fdf6e3;
+}
+.title-slide {
+  background-color: #6e7d75;
+}
+.remark-slide-content h3 {
+    font-size: 31px;
+}
+.remark-code, .remark-inline-code {
+  font-family: Inconsolata, 'Lucida Console', Monaco, monospace;
+}
+.remark-code {
+  font-size: 0.9em;
+}
+.remark-inline-code {
+  font-size: 1em;
+  color: #6c71c4;
+}
