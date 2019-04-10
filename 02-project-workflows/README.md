@@ -25,5 +25,5 @@
 
 <br/>
 
-The slide deck for this material can be found [here](00-workflow.html).
+The slide deck for this material can be found [here](workflow.html).
 
