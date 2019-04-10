@@ -92,7 +92,7 @@ a, a > code {
   color: #fdf6e3;
 }
 .title-slide {
-  background-color: #5d5d5a;
+  background-color: #6e7d75;
   
   
   
@@ -114,6 +114,11 @@ a, a > code {
 }
 .right-column {
   width: 75%;
+  float: right;
+  padding-top: 1em;
+}
+.right-third {
+  width: 57%;
   float: right;
   padding-top: 1em;
 }

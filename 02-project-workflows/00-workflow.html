@@ -21,33 +21,27 @@ class: center, middle, inverse, title-slide
 
 &lt;br /&gt;
 
-#### 1. Save the source, not the workspace  
-#### 2. Project-oriented workflows
+#### 1. Saving source &amp; blank slates  
+#### 2. Project-oriented workflow
 #### 3. Practice safe paths
 #### 4. Naming conventions
+#### 5. Reprex
 #### 5. Debugging
 
 ---
-class: inverse, middle, center
-# Save the source, not &lt;br /&gt; the workspace
+class: inverse, center, middle
+# Saving source &amp; blank slates 
 
 ---
-# Save the source, not &lt;br /&gt; the workspace
+## Save the source, not the workspace
 
-Attachment to your workspace indicates you have a **non-reproducible** workflow. 
+Attachment to your workspace indicates that you have a **non-reproducible** workflow. 
 
-&lt;!--
-This is guaranteed to lead to heartache.
---&gt;
+Any individual R process and the associated workspace is disposable.
 
---
+#### Everything that really matters should be achieved through code that you save. 
 
-#### Suggestions on how to set up a workflow:
-1. Use an IDE
-2. Always start R with a blank state
-3. Restart R often during development
-4. Avoid `rm(list = ls())`?
-
+&lt;img src=https://whattheyforgot.org/img/if-you-liked-it-you-should-have-saved-the-source-for-it.jpg height="360px"/&gt;
 ???
 Saving code – not workspaces – is incredibly important because it is an absolute requirement for reproducibility. 
 ---
@@ -62,9 +56,13 @@ Popular IDEs:
 - vim + Nvim-R  
 - Visual Studio + RTVS
 
-&lt;br /&gt;
+
 &lt;br /&gt;
 #### This eliminates the temptation to develop code directly in the R Console. 
+
+**Direction of causality**: long-time coders don’t organize their work into self-contained projects and use relative paths because they use an IDE. They use an IDE because it makes it easier to follow standard practices, such as these.
+
+(More on this to come)
 
 ???
 best practices = develop reproducible code in a .R or .Rmd file
@@ -97,13 +95,13 @@ In RStudio, set this via *Tools* &gt; *Global Options*
 #### To restart:
 In RStudio, menu item *Session* &gt; *Restart R*
 
-Keyboard shortcut: (Ctrl/Command)+Shift+F10 
+Keyboard shortcut: [Ctrl/Command] + Shift + F10 
 
 #### To say "re-run all the code up to HERE":  
 
-In an R script, use Ctrl+Alt+B (Windows and Linux) or Command+Option+B (Mac OS)  
+In an R script, use &lt;br /&gt;[Ctrl/Command] + [Alt/Option] + B 
 
-In R markdown, use Ctrl+Alt+P (Windows and Linux) or Command+Option+P (Mac OS)  
+In R markdown, use &lt;br /&gt;[Ctrl/Command] + [Alt/Option] + P 
 
 If you run R from the shell, use Ctrl+D or q() to quit, then restart R.
 
@@ -141,7 +139,7 @@ class: inverse, middle, center
 
 
 ---
-## Workflow versus Product
+## Workflow vs. Product
 
 **Workflow** = the things you do because of personal taste and habits 
 
@@ -199,11 +197,15 @@ Workflow-related operations should be executed by you interactively, using whate
 --&gt;
 
 ---
-## `setwd("path/that/only/works/on/my/machine")`
+background-image: url(https://pics.me.me/look-into-your-hard-drive-and-open-your-mercy-file-7551660.png)
+background-size: 500px
+background-position: 0% 50%
 
+.right-third[
+### `setwd("path/that/only/works/on/my/machine")`
 The chance of the `setwd()` command having the desired effect – making the file paths work – for anyone besides its author is 0%. 
 
-It’s also unlikely to work for the author one or two years or computers from now.
+It’s also unlikely to work for the author one or two years or computers from now.]
 
 ???
 ## Dilemma and solution
@@ -226,19 +228,28 @@ Use an IDE that supports a project-based workflow. This eliminates the tension b
 ---
 ## Adopt a project-oriented workflow
 
-**Why?**
--  
--  
--  
+**Project**= a folder on your computer that holds all the files relevant to that particular piece of work
 
-**How?**
--  
--  
--  
+**Project-oriented workflow**= a file system discipline
 
+- All paths are relative — relative to the project's folder  
+
+- Eliminates the tension between your development convenience and the portability of the code.
+
+???
+This convention guarantees that the project can be moved around on your computer or onto other computers and will still “just work”. 
 
 ---
-## RStudio projects
+## RStudio Projects
+
+The RStudio IDE (capital "P") Project  
+- a very effective implementation of the (small "p") projects.
+
+#### Why?
+
+👍 They are the same “unit” as a GitHub repo!
+
+👍 You can have multiple Projects going at once!
 
 ---
 background-image: url(https://pbs.twimg.com/media/DtlqyWZVAAIuylm.jpg:large)
@@ -250,9 +261,26 @@ class: inverse, center
 ---
 ## The `here` package
 
+#### How can you avoid `setwd()` at the top of every script?
+
+
+`here()` identifies your project's files, based on the current working directory at the time when the package is loaded.
+
+👍 There are the only 3 functions in the `here()` package!  
+
+- `here()`:  
+
+- `dr_here()`: understand why
+
+- `set_here()`:  set a place manually
+
+-
 
 ---
-class: inverse, middle, center
+background-image: url(https://www.huridocs.org/wp-content/uploads/2016/07/filenaming-comic.png)
+background-size: 300px
+background-position: 50% 80%
+class: inverse, center
 # Naming Conventions
 
 ---
