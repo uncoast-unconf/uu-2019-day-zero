@@ -163,39 +163,6 @@ class: inverse, middle, center
 
 Workflow-related operations should be executed by you interactively, using whatever means is appropriate to your setup, but not built into the scripts themselves.
 
-
-
----
-## Staying organized
-
-.pull-left[
-👍 self-explaining  
-
-&lt;br /&gt;
-👍  
-&lt;br /&gt;  
-👍   
-
-]
-
-.pull-right[
-👎 wordy, needy explainers  
-
-&lt;br /&gt;
-👎   
-
-&lt;br /&gt;
-👎   
-
-]
-
-&lt;!--
-&lt;br /&gt;&lt;br /&gt;
-.center[
-#### The more **deliberate** you are about where things live, &lt;br /&gt; the **easier** it will be for you &amp; future you, &lt;br /&gt; the **easier** it will be for other people, &lt;br /&gt; the **easier** it will be for other computers.
-]
---&gt;
-
 ---
 background-image: url(https://pics.me.me/look-into-your-hard-drive-and-open-your-mercy-file-7551660.png)
 background-size: 500px
@@ -259,22 +226,23 @@ class: inverse, center
 # Practice Safe Paths
 
 ---
-## The `here` package
+## Tips to avoid `setwd()`
 
-#### How can you avoid `setwd()` at the top of every script?
+#### The `fs` package
+
+- filepath handling
+
+#### The `here()` package
+
+- project-relative paths  
+
+- identifies your project's files, based on the current working directory at the time when the package is loaded.
+
+`
+---
+## Create a stable base
 
 
-`here()` identifies your project's files, based on the current working directory at the time when the package is loaded.
-
-👍 There are the only 3 functions in the `here()` package!  
-
-- `here()`:  
-
-- `dr_here()`: understand why
-
-- `set_here()`:  set a place manually
-
--
 
 ---
 background-image: url(https://www.huridocs.org/wp-content/uploads/2016/07/filenaming-comic.png)
@@ -292,6 +260,37 @@ class: inverse, center
 
 ---
 ## Break logic &amp; output into pieces
+
+---
+## Staying organized
+
+.pull-left[
+👍 self-explaining  
+
+&lt;br /&gt;
+👍  
+&lt;br /&gt;  
+👍   
+
+]
+
+.pull-right[
+👎 wordy, needy explainers  
+
+&lt;br /&gt;
+👎   
+
+&lt;br /&gt;
+👎   
+
+]
+
+&lt;!--
+&lt;br /&gt;&lt;br /&gt;
+.center[
+#### The more **deliberate** you are about where things live, &lt;br /&gt; the **easier** it will be for you &amp; future you, &lt;br /&gt; the **easier** it will be for other people, &lt;br /&gt; the **easier** it will be for other computers.
+]
+--&gt;
 
 ---
 ## Styleguide
