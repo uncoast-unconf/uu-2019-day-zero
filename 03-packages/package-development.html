@@ -21,7 +21,7 @@ class: center, middle, inverse, title-slide
 
 
 
-## Base process
+## Overview
 
 .teach-left[
 &lt;img src="workspace/img-verbs/base.png" width="3299" style="display: block; margin: auto auto auto 0;" /&gt;
@@ -35,7 +35,7 @@ class: center, middle, inverse, title-slide
 
 ---
 
-## Base process
+## Overview
 
 .teach-left[
 &lt;img src="workspace/img-verbs/base.png" width="3299" style="display: block; margin: auto auto auto 0;" /&gt;
@@ -54,6 +54,37 @@ class: center, middle, inverse, title-slide
 &lt;img src="workspace/img-verbs/create-package.png" width="3299" style="display: block; margin: auto auto auto 0;" /&gt;
 ]
 
+.teach-right[ 
+&lt;img src="workspace/img-nouns/create-package.png" width="824" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+
+## Create package (your turn)
+
+.teach-left[
+
+```r
+create_package("../foofactors") # set the path to suit you
+```
+
+- creates a minimal set of files for an installable package
+
+  - `.gitignore` helps keep you safe, `.Rbuildignore` helps keep you legal
+
+- opens a new RStudio project
+
+**Next**, open `DESCRIPTION` file to edit it:
+
+- `Authors@R` field populated using `options("usethis.description")`
+
+- Add `Title` field
+
+- Add `Description` field
+
+- Save `DESCRIPTION` file
+
+]
 
 .teach-right[ 
 &lt;img src="workspace/img-nouns/create-package.png" width="824" style="display: block; margin: auto 0 auto auto;" /&gt;
@@ -67,6 +98,106 @@ class: center, middle, inverse, title-slide
 &lt;img src="workspace/img-verbs/framework.png" width="3299" style="display: block; margin: auto auto auto 0;" /&gt;
 ]
 
+
+.teach-right[ 
+&lt;img src="workspace/img-nouns/framework.png" width="821" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+
+## Create framework (your turn)
+
+.teach-left[
+```r
+use_git()
+```
+
+- creates a git repository in your (package) project
+
+- makes a first commit on your behalf
+
+- restarts RStudio
+
+]
+
+
+.teach-right[ 
+&lt;img src="workspace/img-nouns/framework.png" width="821" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+
+## Create framework (your turn)
+
+.teach-left[
+
+```r
+use_github()
+```
+
+- this is the closest you may see to **actual** magic:
+
+  - creates GitHub repository
+
+  - creates git remote `origin`, sets to GitHub repository
+
+  - pushes your `master` branch to git remote
+
+  - adds information to `DESCRIPTION` file
+
+  - opens your repository page at GitHub
+
+]
+
+
+.teach-right[ 
+&lt;img src="workspace/img-nouns/framework.png" width="821" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+
+## Create framework (your turn)
+
+.teach-left[
+
+```r
+use_mit_license()
+```
+
+- lets the world know how it can use the stuff you create
+
+  - CRAN requires you to specify a (valid) license
+
+- other choices include 
+ 
+  - `use_apl2_license()`: Apache 2.0
+  
+  - `use_gpl3_license()`: GPL3
+
+- uses `option("usethis.full_name")` or `option("devtools.name")` 
+
+]
+
+
+.teach-right[ 
+&lt;img src="workspace/img-nouns/framework.png" width="821" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+
+## Create framework (your turn)
+
+.teach-left[
+
+```r
+use_roxygen_md()
+```
+
+- makes it **much** easier to create and maintain your function documentation
+
+  - lets you use a markdown-like syntax
+
+]
 
 .teach-right[ 
 &lt;img src="workspace/img-nouns/framework.png" width="821" style="display: block; margin: auto 0 auto auto;" /&gt;

@@ -17,7 +17,7 @@ output:
 options(htmltools.dir.version = FALSE)
 ```
 
-## Base process
+## Overview
 
 .teach-left[
 ```{r verb-base, echo=FALSE, fig.align='left'}
@@ -35,7 +35,7 @@ knitr::include_graphics("workspace/img-nouns/prelim.png")
 
 ---
 
-## Base process
+## Overview
 
 .teach-left[
 ```{r verb-base-2, echo=FALSE, fig.align='left'}
@@ -60,9 +60,42 @@ knitr::include_graphics("workspace/img-verbs/create-package.png")
 ```
 ]
 
-
 .teach-right[ 
 ```{r noun-create-package, echo=FALSE, fig.align='right'}
+knitr::include_graphics("workspace/img-nouns/create-package.png")
+```
+]
+
+---
+
+## Create package (your turn)
+
+.teach-left[
+
+```r
+create_package("../foofactors") # set the path to suit you
+```
+
+- creates a minimal set of files for an installable package
+
+  - `.gitignore` helps keep you safe, `.Rbuildignore` helps keep you legal
+
+- opens a new RStudio project
+
+**Next**, open `DESCRIPTION` file to edit it:
+
+- `Authors@R` field populated using `options("usethis.description")`
+
+- Add `Title` field
+
+- Add `Description` field
+
+- Save `DESCRIPTION` file
+
+]
+
+.teach-right[ 
+```{r noun-create-package2, echo=FALSE, fig.align='right'}
 knitr::include_graphics("workspace/img-nouns/create-package.png")
 ```
 ]
@@ -80,6 +113,114 @@ knitr::include_graphics("workspace/img-verbs/framework.png")
 
 .teach-right[ 
 ```{r noun-framework, echo=FALSE, fig.align='right'}
+knitr::include_graphics("workspace/img-nouns/framework.png")
+```
+]
+
+---
+
+## Create framework (your turn)
+
+.teach-left[
+```r
+use_git()
+```
+
+- creates a git repository in your (package) project
+
+- makes a first commit on your behalf
+
+- restarts RStudio
+
+]
+
+
+.teach-right[ 
+```{r noun-framework-2, echo=FALSE, fig.align='right'}
+knitr::include_graphics("workspace/img-nouns/framework.png")
+```
+]
+
+---
+
+## Create framework (your turn)
+
+.teach-left[
+
+```r
+use_github()
+```
+
+- this is the closest you may see to **actual** magic:
+
+  - creates GitHub repository
+
+  - creates git remote `origin`, sets to GitHub repository
+
+  - pushes your `master` branch to git remote
+
+  - adds information to `DESCRIPTION` file
+
+  - opens your repository page at GitHub
+
+]
+
+
+.teach-right[ 
+```{r noun-framework-3, echo=FALSE, fig.align='right'}
+knitr::include_graphics("workspace/img-nouns/framework.png")
+```
+]
+
+---
+
+## Create framework (your turn)
+
+.teach-left[
+
+```r
+use_mit_license()
+```
+
+- lets the world know how it can use the stuff you create
+
+  - CRAN requires you to specify a (valid) license
+
+- other choices include 
+ 
+  - `use_apl2_license()`: Apache 2.0
+  
+  - `use_gpl3_license()`: GPL3
+
+- uses `option("usethis.full_name")` or `option("devtools.name")` 
+
+]
+
+
+.teach-right[ 
+```{r noun-framework-4, echo=FALSE, fig.align='right'}
+knitr::include_graphics("workspace/img-nouns/framework.png")
+```
+]
+
+---
+
+## Create framework (your turn)
+
+.teach-left[
+
+```r
+use_roxygen_md()
+```
+
+- makes it **much** easier to create and maintain your function documentation
+
+  - lets you use a markdown-like syntax
+
+]
+
+.teach-right[ 
+```{r noun-framework-5, echo=FALSE, fig.align='right'}
 knitr::include_graphics("workspace/img-nouns/framework.png")
 ```
 ]
