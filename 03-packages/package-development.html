@@ -197,6 +197,15 @@ use_roxygen_md()
 
   - lets you use a markdown-like syntax
 
+----
+
+```r
+document()
+load_all()
+check()
+```
+- commit, pull, push
+
 ]
 
 .teach-right[ 
@@ -218,10 +227,224 @@ use_roxygen_md()
 
 ---
 
+## Develop (your turn)
+
+.teach-left[
+```r
+use_r("fbind")
+```
+
+I like the idea of "document-driven" development:
+
+ - claim what the function will do, then do it
+
+ - if your explanation is getting heavy, split into more functions
+  
+```r
+#' Concatenate factors, including levels
+#'
+#' @param a `factor`
+#' @param b `factor`
+#'
+#' @return `factor`, concatenation of `a` and `b`
+#' 
+#' @export
+#'
+fbind &lt;- function(a, b) {
+}
+```
+]
+
+.teach-right[ 
+&lt;img src="workspace/img-nouns/develop.png" width="824" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+
+## Develop (your turn)
+
+.teach-left[
+
+```r
+#' Concatenate factors, including levels
+#'
+#' Concatenates two factors with two differerent sets of levels, returning
+#' a factor with levels that are the union of the input factors' levels.
+#
+#' @param a `factor`
+#' @param b `factor`
+#'
+#' @return `factor`, concatenation of `a` and `b`
+#' @examples
+#'   fbind(iris$Species, Puromycin$state)
+#' @export
+#'
+fbind &lt;- function(a, b) {
+  forcats::fct_c(a, b)
+}
+```
+]
+
+.teach-right[ 
+&lt;img src="workspace/img-nouns/develop.png" width="824" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+
+## Develop (your turn)
+
+.teach-left[
+
+Making a pull-request into someone else's project, write code using their style.
+
+- look for `CONTRIBUTING.md` 
+
+```r
+forcats::fct_c(a, b)
+```
+
+☝️ Use this notation to be explicit about where R looks for the function `fct_c()`.
+
+----
+
+```r
+document()
+load_all()
+check()
+```
+
+What happened?
+
+]
+
+.teach-right[ 
+&lt;img src="workspace/img-nouns/develop.png" width="824" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+---
+
+## Develop (your turn)
+
+.teach-left[
+
+```r
+use_package("forcats")
+```
+
+We need to specify that *our* package will use the **forcats** package:
+
+- we can indicate a stronger reliance using `Imports` (we do this)
+
+- we can indicate a weaker reliance using `Suggests` (addional test)
+
+Dependency management is a long-debated topic in the R community:
+
+- for now, if you need to rely on a package, do it
+
+----
+
+```r
+document()
+load_all()
+check()
+```
+
+- commit, pull, push
+
+]
+
+.teach-right[ 
+&lt;img src="workspace/img-nouns/develop.png" width="824" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+
 ## Test
 
 .teach-left[
 &lt;img src="workspace/img-verbs/test.png" width="3299" style="display: block; margin: auto auto auto 0;" /&gt;
+]
+
+
+.teach-right[ 
+&lt;img src="workspace/img-nouns/test.png" width="824" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+## Test (your turn)
+
+.teach-left[
+
+```r
+use_testthat()
+```
+
+You need to run this only once; it sets up the testing infrastructure.
+
+We do this to:
+
+- make sure that our functions behave as we expect
+
+- make sure that our functions **continue** to behave as we expect.
+
+]
+
+
+.teach-right[ 
+&lt;img src="workspace/img-nouns/test.png" width="824" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+
+## Test (your turn)
+
+.teach-left[
+
+```r
+use_test("fbind")
+```
+
+Edit `test-fbind.R` with something like:
+
+```r
+context("Binding factors")
+
+test_that("fbind() binds factors", {
+
+  x &lt;- factor(c("a", "b"))
+  y &lt;- factor(c("c", "d"))
+  z &lt;- factor(c("a", "b", "c", "d"))
+
+  expect_identical(fbind(x, y), z)
+})
+```
+
+Save `test-fbind.R`.
+
+```r
+test()
+```
+
+]
+
+
+.teach-right[ 
+&lt;img src="workspace/img-nouns/test.png" width="824" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+
+## Test (your turn)
+
+.teach-left[
+
+```r
+document()
+load_all()
+check()
+```
+
+- commit, pull, push
+
 ]
 
 
@@ -244,6 +467,111 @@ use_roxygen_md()
 
 ---
 
+## Document (your turn)
+
+.teach-left[
+
+```r
+use_readme_rmd()
+```
+
+Helps people learn why they might be interested to use *your* package.
+
+The function produces a template for you to edit:
+
+  - adapt it to `foofactors`
+  - "knit" to create `README.md`
+
+Note, you will have to replace the CRAN stuff with:
+
+```r
+devtools::install_github("&lt;username&gt;/foofactors")
+```
+
+---
+
+```r
+document()
+load_all()
+check()
+```
+
+- commit, pull, push
+
+]
+
+
+.teach-right[ 
+&lt;img src="workspace/img-nouns/document.png" width="824" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+
+---
+
+## Document (your turn)
+
+.teach-left[
+
+```r
+use_pkgdown()
+```
+
+- use to build a website that documents your entire package
+
+- great because it forces *you* to confront your documentation
+
+- creates and opens `_pkgdown.yml`; to customize with [bootswatch](https://gallery.shinyapps.io/117-shinythemes/) theme, add:
+
+```yaml
+template:
+  params:
+    bootswatch: cerulean # or choose another
+```
+
+---
+
+```r
+build_site()
+```
+
+- commit, pull, push
+
+]
+
+
+.teach-right[ 
+&lt;img src="workspace/img-nouns/document.png" width="824" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+
+---
+
+## Document (your turn)
+
+.teach-left[
+
+To deploy your website using GitHub pages:
+
+- go to the web-page for your GitHub repository
+
+- ⚙️ **Settings** &gt; **GitHub Pages** &gt; **Source**:
+
+- set to **master branch /docs folder** 
+
+----
+
+There's a lot more information at the [pkgdown web-site](https://pkgdown.r-lib.org/index.html).
+
+]
+
+
+.teach-right[ 
+&lt;img src="workspace/img-nouns/document.png" width="824" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+
+---
+
 ## Summary
 
 .teach-left[
@@ -253,6 +581,33 @@ use_roxygen_md()
 .teach-right[ 
 &lt;img src="workspace/img-nouns/all.png" width="824" style="display: block; margin: auto 0 auto auto;" /&gt;
 ]
+
+---
+
+
+### Random stuff (in case we have time)
+
+- How to I do "x"?
+
+  - What does [Tidyverse](https://github.com/tidyverse) do? 
+  - Just look through the code.
+
+- Guides:
+
+  - [Tidyverse style guide](https://style.tidyverse.org/)
+  
+  - [ROpenSci development guide](https://ropensci.github.io/dev_guide/)
+
+- Philosophy:
+
+ - [Tidyverse principles](https://principles.tidyverse.org)
+ 
+ - Ian's [favorite issue](https://github.com/r-lib/httr2/issues/1)
+ 
+- Roxygen life-savers
+
+  - `@inheritParams my_fun`
+  - `@inherit my_fun return`
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
