@@ -21,10 +21,54 @@ class: center, middle, inverse, title-slide
 
 
 
+&lt;img src="workspace/img-misc/ian.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Motivation
+
+In the R world, versions of this are attributed to Hadley Wickham:
+
+&gt; Any time you copy-and-paste code three times, write a function. 
+&gt;
+&gt; Any time you copy-and-paste a function three times, write a package.
+
+--
+
+Also known as the [rule of three](https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming):
+
+ - popularized by Martin Fowler (1999), attributed to Don Roberts
+ 
+--
+
+Packages are the means for sharing code:
+
+  - CRAN
+
+  - GitHub
+
+---
+
+## References and Resources
+
+- R Packages book, Hadley Wickham
+  - [first edition](http://r-pkgs.had.co.nz/)
+  - [second edition](https://r-pkgs.org/) (dev), with Jenny Bryan
+  
+- [usethis](https://usethis.r-lib.org/) package, Jenny Bryan and Hadley Wickham
+
+- [Packages](https://github.com/hfrick/presentations/blob/master/2019-03-12_package_building/2019-03-12_package_building.pdf), Hannah Frick
+  
+- [goodPractice](https://github.com/hfrick/presentations/blob/master/2018-06-27_goodpractice/2018-06-27_goodpractice.pdf), Hannah Frick
+
+---
+
 ## Overview
 
 .teach-left[
 &lt;img src="workspace/img-verbs/base.png" width="3299" style="display: block; margin: auto auto auto 0;" /&gt;
+
+.footnote[Figure adapted from [Packages](https://github.com/hfrick/presentations/blob/master/2019-03-12_package_building/2019-03-12_package_building.pdf), by Hannah Frick]
 ]
 
 --
@@ -39,6 +83,8 @@ class: center, middle, inverse, title-slide
 
 .teach-left[
 &lt;img src="workspace/img-verbs/base.png" width="3299" style="display: block; margin: auto auto auto 0;" /&gt;
+
+.footnote[Figure adapted from [Packages](https://github.com/hfrick/presentations/blob/master/2019-03-12_package_building/2019-03-12_package_building.pdf), by Hannah Frick]
 ]
 
 
@@ -295,15 +341,17 @@ fbind &lt;- function(a, b) {
 
 .teach-left[
 
-Making a pull-request into someone else's project, write code using their style.
-
-- look for `CONTRIBUTING.md` 
-
 ```r
 forcats::fct_c(a, b)
 ```
 
 ☝️ Use this notation to be explicit about where R looks for the function `fct_c()`.
+
+----
+
+Making a pull-request into someone else's project, write code using their style.
+
+- look for `CONTRIBUTING.md` 
 
 ----
 
@@ -334,7 +382,7 @@ We need to specify that *our* package will use the **forcats** package:
 
 - we can indicate a stronger reliance using `Imports` (we do this)
 
-- we can indicate a weaker reliance using `Suggests` (addional test)
+- we can indicate a weaker reliance using `Suggests` (additional test)
 
 Dependency management is a long-debated topic in the R community:
 
@@ -589,8 +637,9 @@ There's a lot more information at the [pkgdown web-site](https://pkgdown.r-lib.o
 
 - How to I do "x"?
 
+  - [RStudio community](https://community.rstudio.com/) is very welcoming.
   - What does [Tidyverse](https://github.com/tidyverse) do? 
-  - Just look through the code.
+    - Just look through the code.
 
 - Guides:
 
