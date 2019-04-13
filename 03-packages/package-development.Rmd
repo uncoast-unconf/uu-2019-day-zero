@@ -709,6 +709,7 @@ template:
 `r emo::ji("floppy_disk")` save `_pkgdown.yml`
 
 ```r
+install()
 build_site()
 ```
 
