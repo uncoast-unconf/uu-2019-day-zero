@@ -14,5 +14,7 @@ The structure of the repository will be "not entirely stable" for the next littl
 - [Project Workflows](02-project-workflows/README.md)
 - [Packages](03-packages/README.md)
 
+This work is offered under the [MIT License](LICENSE.md).
+
 
 
