@@ -1,29 +1,34 @@
-## Project Workflows
+### Project-oriented workflow
 
-##### 1. Save the source, not the workspace
+1. Saving source & blank slates  
 
-- Always start R with a blank slate  
-- Restart R often  
-- Avoid `rm(list = ls())`
+2. Project-oriented workflow
 
-##### 2. Project-oriented workflows
+3. Practice safe paths
 
-- `setwd("path/that/only/works/on/my/machine")`  
-- Tips for staying organized  
-- RStudio projects
+4. Naming conventions
 
-##### 3. Practice safe paths
+### Getting help
 
-- The `here` package  
+5. Reprex
 
-##### 4. Naming conventions
+6. Debugging
 
-- Three principles  
-- Break logic & output into pieces  
+The slide deck for this material can be found [here](workflow.html).
 
-##### 5. Debugging
 
 <br/>
 
-The slide deck for this material can be found [here](workflow.html).
+
+### Resources
+
+Most of this is built directly from the work of others:
+
+[What They Forgot to Teach You](https://whattheyforgot.org/index.html) by Jenny Bryan & Jim Hester  
+
+Heike Hofmann's [585X class](https://stat585-at-isu.github.io/schedule.html) at ISU
+
+[Streamlined workflows in R](https://jules32.github.io/streamlined-workflows/#1) by Julie Lowndes
+
+Illustrations by [Allison Horst](https://twitter.com/allison_horst?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)
 
