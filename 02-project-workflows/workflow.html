@@ -18,16 +18,17 @@ class: center, middle, inverse, title-slide
 
 
 
-# Workflow topics
-
-&lt;br /&gt;
+## Workflow topics
 
 #### 1. Saving source &amp; blank slates  
 #### 2. Project-oriented workflow
 #### 3. Practice safe paths
 #### 4. Naming conventions
+
+## Getting help
+
 #### 5. Reprex
-#### 5. Debugging
+#### 6. Debugging
 
 ---
 class: inverse, center, middle
@@ -211,6 +212,7 @@ Use an IDE that supports a project-based workflow. This eliminates the tension b
 
 - Eliminates the tension between your development convenience and the portability of the code.
 
+
 ???
 This convention guarantees that the project can be moved around on your computer or onto other computers and will still “just work”. 
 
@@ -260,55 +262,201 @@ class: inverse, center
 # Naming Conventions
 
 ---
-## 3 Principles
+.left-column-small[
+.right[
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
 
-1. Machine readable
-2. Human readable 
-3. Plays well with default ordering
+# 🙀
+
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+
+#😺
+]
+]
+.right-column-large[
+
+#### myabstract.docx  
+
+#### Joe’s Filenames Use Spaces and Punctuation.xlsx
+
+#### figure 1.png
+
+#### homework1.R
+
+#### JW7d^(2sl@deletethisandyourcareerisoverWx2*.txt
+
+&lt;br /&gt;&lt;br /&gt;
+
+#### 2018-01_bryan-abstract-rstudio-conf.docx
+
+#### joes-filenames-are-getting-better.xlsx
+
+#### fig01_scatterplot-talk-length-vs-interest.png
+
+#### bryan_hw01.R
+
+#### 1986-01-28_raw-data-from-challenger-o-rings.txt
+]
+
+???
+What works? What doesn't?
+---
+.left-minus[
+&lt;img src="img/unique-file.png" height="550px"/&gt;
+]
+.right-plus[
+## Three principles
+
+#### 1. Machine readable
+  
+#### 2. Human readable 
+
+#### 3. Plays well with default ordering
+]
+???
+
+Easy to implement 
+
+Payoffs accumulate as your skills evolve and projects get more complex
+---
+## 1. Machine readable
+
+**Regular expression and globbing friendly:** avoid spaces, punctuation, case sensitivity, etc.
+
+![plasmid_names](img/plasmid_names.png)
+
+**Easy to compute on:** deliberate use of delimiters
+
+  - `"_"` underscore used to delimit units of meta-data I want later
+
+  - `"-"` hyphen used to delimit words so my eyes don't bleed
+
+![plasmid_delimiters](img/plasmid_delimiters.png)
+
+???
+1. Globbing is the process of expanding a non-specific file name containing a wildcard character into a set of specific file names that exist in storage on a computer, server, or network. A wildcard is a symbol that can stand for one or more characters.
+
+As for reg exp - think of them as search terms
+
+PIC #1: Excerpt of complete file listing
+
 
 ---
-## Break logic &amp; output into pieces
+## 1. Machine readable
+
+.left-column-small[
+.right[
+# 🎉
+
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+#❌
+]
+]
+.right-column-large[
+#### Easy to search for files later
+
+#### Easy to narrow file lists based on names
+
+#### Easy to extract info from file names, e.g. by splitting
+
+&lt;br /&gt;&lt;br /&gt;
+
+#### Spaces in file names
+
+#### Punctuation
+
+#### Accented characters
+
+#### Different files named `foo` and `Foo`
+]
+---
+background-image: url(https://raw.githubusercontent.com/Stat585-at-ISU/materials-2017/master/05_reproducibility/img/01-naming/slug.jpg)
+background-size: 300px
+background-position: 90% 95%
+## 2. Human readable
+
+&lt;img src="img/human_readable_not_options.png" height="380px"/&gt;
+
+???
+Name contains info on content
+
+Which set of file(name)s do you want at 3 a.m. before a deadline?
+
+"Embrace the slug"
+---
+## 3. Plays well with default ordering
+
+**Put something numeric first &amp; left pad other numbers with zeros**
+
+![logical_order](img/logical_order.png)
+
+**Use the ISO 8601 standard for dates**
+
+![chronological_order](img/chronological_order.png)
+
+---
+## Comprehensive map of all countries that use the MM-DD-YYYY format
+
+
+![map_mmddyyy](https://pbs.twimg.com/media/CEwVKWbWgAAzFS2.png)
+
+
+From https://twitter.com/donohoe/status/597876118688026624.
 
 ---
 ## Staying organized
 
+&lt;img src="img/files_messy_tidy.png" height="500px"/&gt;
+
+---
+## A *humane* API for your analysis
+
 .pull-left[
-👍 self-explaining  
-
-&lt;br /&gt;
-👍  
-&lt;br /&gt;  
-👍   
-
+![](https://i.pinimg.com/564x/3c/12/40/3c1240a51e026474c7b13a8af719d3d9.jpg?b=t)
 ]
-
 .pull-right[
-👎 wordy, needy explainers  
+There are going to be files, LOTS of files
+
+The files will change over time
+
+The files will have relationships to each other
+
+It’ll probably get complicated
 
 &lt;br /&gt;
-👎   
 
-&lt;br /&gt;
-👎   
+**Remedies:**
+
+Beware of monoliths
+
+Break logic &amp; output into pieces
+
+The more things are self-explanatory, the better
 
 ]
-
-&lt;!--
-&lt;br /&gt;&lt;br /&gt;
-.center[
-#### The more **deliberate** you are about where things live, &lt;br /&gt; the **easier** it will be for you &amp; future you, &lt;br /&gt; the **easier** it will be for other people, &lt;br /&gt; the **easier** it will be for other computers.
-]
---&gt;
+???
 
 ---
-## Styleguide
+## Data analysis workflow
+
 
 ---
-background-image: url()
-background-size: 300px
-background-position: 50% 80%
 class: inverse, center
-# Reprex
+# Minimal reproducible example
+
+&lt;img src="img/help1.jpg" height="380px"/&gt;&lt;img src="img/help2.jpg" height="380px"/&gt;
+
+---
+## Troubleshooting
+
+#### When in doubt, upgrade
+
+Your issue may be automatically solved by simply upgrading.
+
+#### Restart your R session
+
+
+
 
 ---
 ## Make a reprex in 2 steps
@@ -325,16 +473,20 @@ class: inverse, center
 
 - Strip away everything that is not directly related to your problem
 
+  - remove as many add-on packages in the example as possible 
+
 - Create a much smaller and simpler R object than the one you’re facing in real life 
 
-  - consider using built-in data
+  - consider replacing real data with simpler built-in datasets and see if the problem persists
 
+  
+#### The more irrelevant content, the slower it is for [the helper] to figure out the root issue. 
 
 ---
 ## The `reprex` package
 
 
-
+&lt;!--
 Write a bit of code and copy it to the clipboard:
 
 Enter `reprex()` in the R Console. In RStudio, you’ll see a preview of your rendered reprex.
@@ -342,7 +494,7 @@ Enter `reprex()` in the R Console. In RStudio, you’ll see a preview of your re
 It is now ready and waiting on your clipboard, so you can paste it into, say, a GitHub issue.
 
 If your code is not self-contained, running `reprex()` results in an error.
-
+--&gt;
 ---
 background-image: url(http://bryanavery.co.uk/wp-content/uploads/2018/11/hero-snapshot-debugger.png)
 background-size: 900px
@@ -351,9 +503,34 @@ class: inverse, center
 # Debugging
 
 ---
+## Looking for help
+
+
+1. google exact error message
+
+2. Keyword search community.rstudio.com
+
+3. Stackoverflow - [r] tag
+
+---
 ## Debugging
 
+.pull-left[
+- `traceback()`: determine where a given error is occuring
+  
+- `print()`, `cat()`, `str()`: output diagnostic information
+
+- `browser()`: open an interactive debugger before the error
+
+- `debug()`: automatically open a debugger at the start of a function call
+  
+- `trace()`: start a debugger at a location inside a function
+
+]
+.pull-right[
 ![](https://imgs.xkcd.com/comics/fixing_problems.png)
+]
+
 ---
 class: bottom, center
 background-image: url(https://pbs.twimg.com/media/D0ytsBEUYAALz7f.jpg:large)
