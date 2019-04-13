@@ -33,17 +33,44 @@ In the R world, versions of this are attributed to Hadley Wickham:
 
 --
 
-Also known as the [rule of three](https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming):
-
- - popularized by Martin Fowler (1999), attributed to Don Roberts
+Also known as the [rule of three](https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming): popularized by Martin Fowler (1999), attributed to Don Roberts
  
 --
 
-Packages are the means for sharing code:
+A way to keep stuff together:
+
+ - documentation
+ - functions
+ - tests
+ - data
+
+--
+
+Also the means for sharing stuff:
 
   - CRAN
-
   - GitHub
+
+
+---
+
+## Assumptions
+
+You have gone through the day-zero prep:
+
+- installed packages **devtools** and **usethis** (CRAN)
+
+- git installed and configured
+
+- GitHub account, `GITHUB_PAT` set in `.Renviron`
+  
+- functionality of the [starter `.Rprofile`](https://gist.github.com/ijlyttle/dee4a89c8528cd4a0a319bb7b8cdd51a)
+  
+--
+
+----
+
+`r emo::ji("scream_cat")` `install.packages(c("pkgdown", "forcats"))`
 
 ---
 
@@ -58,6 +85,12 @@ Packages are the means for sharing code:
 - [Packages](https://github.com/hfrick/presentations/blob/master/2019-03-12_package_building/2019-03-12_package_building.pdf), Hannah Frick
   
 - [goodPractice](https://github.com/hfrick/presentations/blob/master/2018-06-27_goodpractice/2018-06-27_goodpractice.pdf), Hannah Frick
+
+- [You can make a package in 20 minutes](https://www.rstudio.com/resources/videos/you-can-make-a-package-in-20-minutes/), Jim Hester
+
+----
+
+`r emo::ji("scream_cat")` `install.packages(c("pkgdown", "forcats"))`
 
 ---
 
@@ -132,13 +165,15 @@ create_package("../foofactors") # set the path to suit you
 
 **Next**, open `DESCRIPTION` file to edit it:
 
-- `Authors@R` field populated using `options("usethis.description")`
+- `Authors@R` field uses `options("usethis.description")` 
 
-- Add `Title` field
+   - set this in `.Rprofile`
 
-- Add `Description` field
+- add `Title` field
 
-- Save `DESCRIPTION` file
+- add `Description` field
+
+- save `DESCRIPTION` file
 
 ]
 
@@ -242,6 +277,8 @@ use_mit_license()
 
 - uses `option("usethis.full_name")` or `option("devtools.name")` 
 
+  - set this in `.Rprofile`
+
 ]
 
 
@@ -272,7 +309,7 @@ document()
 load_all()
 check()
 ```
-- commit, pull, push
+`r emo::ji("rocket")` commit, pull, push
 
 ]
 
@@ -308,25 +345,24 @@ knitr::include_graphics("workspace/img-nouns/develop.png")
 use_r("fbind")
 ```
 
-I like the idea of "document-driven" development:
+I like the idea of documenting, then writing **functions**:
 
- - claim what the function will do, then do it
+- claim what the function will do, then do it
 
- - if your explanation is getting heavy, split into more functions
-  
+- if your explanation is getting heavy, split into more functions
+
+Start by writing a shell for the function:
+
 ```r
-#' Concatenate factors, including levels
-#'
-#' @param a `factor`
-#' @param b `factor`
-#'
-#' @return `factor`, concatenation of `a` and `b`
-#' 
-#' @export
-#'
 fbind <- function(a, b) {
+  
 }
 ```
+
+- place the cursor on the blank line between the `{` `r emo::ji("pencil")` `}` 
+
+- RStudio IDE menu: **Code** > **Insert Roxygen Skeleton**
+
 ]
 
 .teach-right[ 
@@ -335,11 +371,14 @@ knitr::include_graphics("workspace/img-nouns/develop.png")
 ```
 ]
 
+
 ---
 
 ## Develop (your turn)
 
 .teach-left[
+
+Complete the documentation:
 
 ```r
 #' Concatenate factors, including levels
@@ -351,9 +390,45 @@ knitr::include_graphics("workspace/img-nouns/develop.png")
 #' @param b `factor`
 #'
 #' @return `factor`, concatenation of `a` and `b`
-#' @examples
-#'   fbind(iris$Species, Puromycin$state)
 #' @export
+#'
+#' @examples
+#' fbind(iris$Species, Puromycin$state)
+#'
+fbind <- function(a, b) {
+
+}
+```
+]
+
+.teach-right[ 
+```{r noun-develop-3, echo=FALSE, fig.align='right'}
+knitr::include_graphics("workspace/img-nouns/develop.png")
+```
+]
+
+---
+
+## Develop (your turn)
+
+.teach-left[
+
+Write the function body:
+
+```r
+#' Concatenate factors, including levels
+#'
+#' Concatenates two factors with two differerent sets of levels, returning
+#' a factor with levels that are the union of the input factors' levels.
+#
+#' @param a `factor`
+#' @param b `factor`
+#'
+#' @return `factor`, concatenation of `a` and `b`
+#' @export
+#'
+#' @examples
+#' fbind(iris$Species, Puromycin$state)
 #'
 fbind <- function(a, b) {
   forcats::fct_c(a, b)
@@ -362,7 +437,7 @@ fbind <- function(a, b) {
 ]
 
 .teach-right[ 
-```{r noun-develop-3, echo=FALSE, fig.align='right'}
+```{r noun-develop-4, echo=FALSE, fig.align='right'}
 knitr::include_graphics("workspace/img-nouns/develop.png")
 ```
 ]
@@ -393,12 +468,12 @@ load_all()
 check()
 ```
 
-What happened?
+`r emo::ji("thinking")` What happened?
 
 ]
 
 .teach-right[ 
-```{r noun-develop-4, echo=FALSE, fig.align='right'}
+```{r noun-develop-5, echo=FALSE, fig.align='right'}
 knitr::include_graphics("workspace/img-nouns/develop.png")
 ```
 ]
@@ -430,12 +505,12 @@ load_all()
 check()
 ```
 
-- commit, pull, push
+`r emo::ji("rocket")` commit, pull, push
 
 ]
 
 .teach-right[ 
-```{r noun-develop-5, echo=FALSE, fig.align='right'}
+```{r noun-develop-6, echo=FALSE, fig.align='right'}
 knitr::include_graphics("workspace/img-nouns/develop.png")
 ```
 ]
@@ -535,7 +610,7 @@ load_all()
 check()
 ```
 
-- commit, pull, push
+`r emo::ji("rocket")` commit, pull, push
 
 ]
 
@@ -594,7 +669,7 @@ load_all()
 check()
 ```
 
-- commit, pull, push
+`r emo::ji("rocket")` commit, pull, push
 
 ]
 
@@ -634,7 +709,7 @@ template:
 build_site()
 ```
 
-- commit, pull, push
+`r emo::ji("rocket")` commit, pull, push
 
 ]
 
@@ -693,27 +768,25 @@ knitr::include_graphics("workspace/img-nouns/all.png")
 ---
 
 
-### Random stuff (in case we have time)
+## Random stuff (in case we have time)
 
-- How to I do "x"?
+`r emo::ji("thinking")` How to I do "x"?
 
-  - [RStudio community](https://community.rstudio.com/) is very welcoming.
   - What does [Tidyverse](https://github.com/tidyverse) do? 
     - Just look through the code.
+  - [RStudio community](https://community.rstudio.com/) is very welcoming.
 
-- Guides:
+`r emo::ji("open_book")` Guides:
 
   - [Tidyverse style guide](https://style.tidyverse.org/)
-  
   - [ROpenSci development guide](https://ropensci.github.io/dev_guide/)
 
-- Philosophy:
+`r emo::ji("nerd_face")` Philosophy:
 
  - [Tidyverse principles](https://principles.tidyverse.org)
- 
  - Ian's [favorite issue](https://github.com/r-lib/httr2/issues/1)
  
-- Roxygen life-savers
+`r emo::ji("raised_hands")` Roxygen life-savers
 
   - `@inheritParams my_fun`
   - `@inherit my_fun return`
