@@ -51,10 +51,14 @@ Also the means for sharing stuff:
   - CRAN
   - GitHub
 
-
 ---
 
-## Assumptions
+## Caveat and Assumptions
+
+
+This will cover what you need to get **started** creating packages, 
+
+--
 
 You have gone through the day-zero prep:
 
@@ -169,11 +173,11 @@ create_package("../foofactors") # set the path to suit you
 
    - set this in `.Rprofile`
 
-- add `Title` field
+`r emo::ji("pencil2")` edit `Title` field
 
-- add `Description` field
+`r emo::ji("pencil2")` edit `Description` field
 
-- save `DESCRIPTION` file
+`r emo::ji("floppy_disk")` save `DESCRIPTION` file
 
 ]
 
@@ -196,7 +200,7 @@ knitr::include_graphics("workspace/img-verbs/framework.png")
 
 .teach-right[ 
 ```{r noun-framework, echo=FALSE, fig.align='right'}
-knitr::include_graphics("workspace/img-nouns/framework.png")
+knitr::include_graphics("workspace/img-nouns/create-framework.png")
 ```
 ]
 
@@ -220,7 +224,7 @@ use_git()
 
 .teach-right[ 
 ```{r noun-framework-2, echo=FALSE, fig.align='right'}
-knitr::include_graphics("workspace/img-nouns/framework.png")
+knitr::include_graphics("workspace/img-nouns/create-framework.png")
 ```
 ]
 
@@ -251,7 +255,7 @@ use_github()
 
 .teach-right[ 
 ```{r noun-framework-3, echo=FALSE, fig.align='right'}
-knitr::include_graphics("workspace/img-nouns/framework.png")
+knitr::include_graphics("workspace/img-nouns/create-framework.png")
 ```
 ]
 
@@ -284,7 +288,7 @@ use_mit_license()
 
 .teach-right[ 
 ```{r noun-framework-4, echo=FALSE, fig.align='right'}
-knitr::include_graphics("workspace/img-nouns/framework.png")
+knitr::include_graphics("workspace/img-nouns/create-framework.png")
 ```
 ]
 
@@ -315,7 +319,7 @@ check()
 
 .teach-right[ 
 ```{r noun-framework-5, echo=FALSE, fig.align='right'}
-knitr::include_graphics("workspace/img-nouns/framework.png")
+knitr::include_graphics("workspace/img-nouns/create-framework.png")
 ```
 ]
 
@@ -462,6 +466,8 @@ Making a pull-request into someone else's project, write code using their style.
 
 ----
 
+`r emo::ji("floppy_disk")` Save `fbind.R`.
+
 ```r
 document()
 load_all()
@@ -489,9 +495,9 @@ use_package("forcats")
 
 We need to specify that *our* package will use the **forcats** package:
 
-- we can indicate a stronger reliance using `Imports` (we do this)
+- indicate a stronger reliance using `Imports` (default)
 
-- we can indicate a weaker reliance using `Suggests` (additional test)
+- indicate a weaker reliance using `Suggests` (test for package in functions)
 
 Dependency management is a long-debated topic in the R community:
 
@@ -568,7 +574,7 @@ knitr::include_graphics("workspace/img-nouns/test.png")
 use_test("fbind")
 ```
 
-Edit `test-fbind.R` with something like:
+`r emo::ji("pencil2")` edit `test-fbind.R` with something like:
 
 ```r
 context("Binding factors")
@@ -583,7 +589,7 @@ test_that("fbind() binds factors", {
 })
 ```
 
-Save `test-fbind.R`.
+`r emo::ji("floppy_disk")` save `test-fbind.R`
 
 ```r
 test()
@@ -650,16 +656,13 @@ use_readme_rmd()
 
 Helps people learn why they might be interested to use *your* package.
 
-The function produces a template for you to edit:
+The function produces a template: 
 
-  - adapt it to `foofactors`
-  - "knit" to create `README.md`
-
-Note, you will have to replace the CRAN stuff with:
-
-```r
-devtools::install_github("<username>/foofactors")
-```
+  `r emo::ji("pencil2")` edit to adapt to **foofactors**
+  
+  `r emo::ji("x")` delete CRAN-installation stuff
+  
+  `r emo::ji("yarn")` "Knit" to create `README.md`
 
 ---
 
@@ -680,7 +683,6 @@ knitr::include_graphics("workspace/img-nouns/document.png")
 ```
 ]
 
-
 ---
 
 ## Document (your turn)
@@ -691,19 +693,20 @@ knitr::include_graphics("workspace/img-nouns/document.png")
 use_pkgdown()
 ```
 
-- use to build a website that documents your entire package
+- [pkgdown]((https://pkgdown.r-lib.org/index.html) package, by Hadley Wickham and Jay Hesselberth  
 
-- great because it forces *you* to confront your documentation
+  - builds a website to document your entire package
+  - forces *you* to confront your documentation
 
-- creates and opens `_pkgdown.yml`; to customize with [bootswatch](https://gallery.shinyapps.io/117-shinythemes/) theme, add:
+`r emo::ji("pencil2")` edit `_pkgdown.yml` to [customize](https://gallery.shinyapps.io/117-shinythemes/) theme (remember newline at end):
 
 ```yaml
 template:
   params:
-    bootswatch: cerulean # or choose another
+    bootswatch: cerulean # or choose another 
 ```
 
----
+`r emo::ji("floppy_disk")` save `_pkgdown.yml`
 
 ```r
 build_site()

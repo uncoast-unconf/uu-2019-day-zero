@@ -53,10 +53,14 @@ Also the means for sharing stuff:
   - CRAN
   - GitHub
 
-
 ---
 
-## Assumptions
+## Caveat and Assumptions
+
+
+This will cover what you need to get **started** creating packages, 
+
+--
 
 You have gone through the day-zero prep:
 
@@ -159,11 +163,11 @@ create_package("../foofactors") # set the path to suit you
 
    - set this in `.Rprofile`
 
-- add `Title` field
+✏️ edit `Title` field
 
-- add `Description` field
+✏️ edit `Description` field
 
-- save `DESCRIPTION` file
+💾 save `DESCRIPTION` file
 
 ]
 
@@ -181,7 +185,7 @@ create_package("../foofactors") # set the path to suit you
 
 
 .teach-right[ 
-&lt;img src="workspace/img-nouns/framework.png" width="821" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;img src="workspace/img-nouns/create-framework.png" width="821" style="display: block; margin: auto 0 auto auto;" /&gt;
 ]
 
 ---
@@ -203,7 +207,7 @@ use_git()
 
 
 .teach-right[ 
-&lt;img src="workspace/img-nouns/framework.png" width="821" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;img src="workspace/img-nouns/create-framework.png" width="821" style="display: block; margin: auto 0 auto auto;" /&gt;
 ]
 
 ---
@@ -232,7 +236,7 @@ use_github()
 
 
 .teach-right[ 
-&lt;img src="workspace/img-nouns/framework.png" width="821" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;img src="workspace/img-nouns/create-framework.png" width="821" style="display: block; margin: auto 0 auto auto;" /&gt;
 ]
 
 ---
@@ -263,7 +267,7 @@ use_mit_license()
 
 
 .teach-right[ 
-&lt;img src="workspace/img-nouns/framework.png" width="821" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;img src="workspace/img-nouns/create-framework.png" width="821" style="display: block; margin: auto 0 auto auto;" /&gt;
 ]
 
 ---
@@ -292,7 +296,7 @@ check()
 ]
 
 .teach-right[ 
-&lt;img src="workspace/img-nouns/framework.png" width="821" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;img src="workspace/img-nouns/create-framework.png" width="821" style="display: block; margin: auto 0 auto auto;" /&gt;
 ]
 
 ---
@@ -428,6 +432,8 @@ Making a pull-request into someone else's project, write code using their style.
 
 ----
 
+💾 Save `fbind.R`.
+
 ```r
 document()
 load_all()
@@ -453,9 +459,9 @@ use_package("forcats")
 
 We need to specify that *our* package will use the **forcats** package:
 
-- we can indicate a stronger reliance using `Imports` (we do this)
+- indicate a stronger reliance using `Imports` (default)
 
-- we can indicate a weaker reliance using `Suggests` (additional test)
+- indicate a weaker reliance using `Suggests` (test for package in functions)
 
 Dependency management is a long-debated topic in the R community:
 
@@ -524,7 +530,7 @@ We do this to:
 use_test("fbind")
 ```
 
-Edit `test-fbind.R` with something like:
+✏️ edit `test-fbind.R` with something like:
 
 ```r
 context("Binding factors")
@@ -539,7 +545,7 @@ test_that("fbind() binds factors", {
 })
 ```
 
-Save `test-fbind.R`.
+💾 save `test-fbind.R`
 
 ```r
 test()
@@ -598,16 +604,13 @@ use_readme_rmd()
 
 Helps people learn why they might be interested to use *your* package.
 
-The function produces a template for you to edit:
+The function produces a template: 
 
-  - adapt it to `foofactors`
-  - "knit" to create `README.md`
-
-Note, you will have to replace the CRAN stuff with:
-
-```r
-devtools::install_github("&lt;username&gt;/foofactors")
-```
+  ✏️ edit to adapt to **foofactors**
+  
+  ❌ delete CRAN-installation stuff
+  
+  🧶 "Knit" to create `README.md`
 
 ---
 
@@ -626,7 +629,6 @@ check()
 &lt;img src="workspace/img-nouns/document.png" width="824" style="display: block; margin: auto 0 auto auto;" /&gt;
 ]
 
-
 ---
 
 ## Document (your turn)
@@ -637,19 +639,20 @@ check()
 use_pkgdown()
 ```
 
-- use to build a website that documents your entire package
+- [pkgdown]((https://pkgdown.r-lib.org/index.html) package, by Hadley Wickham and Jay Hesselberth  
 
-- great because it forces *you* to confront your documentation
+  - builds a website to document your entire package
+  - forces *you* to confront your documentation
 
-- creates and opens `_pkgdown.yml`; to customize with [bootswatch](https://gallery.shinyapps.io/117-shinythemes/) theme, add:
+✏️ edit `_pkgdown.yml` to [customize](https://gallery.shinyapps.io/117-shinythemes/) theme (remember newline at end):
 
 ```yaml
 template:
   params:
-    bootswatch: cerulean # or choose another
+    bootswatch: cerulean # or choose another 
 ```
 
----
+💾 save `_pkgdown.yml`
 
 ```r
 build_site()
