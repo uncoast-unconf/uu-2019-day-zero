@@ -79,3 +79,11 @@ If you want to know exactly what element you're looking at, you can right-click 
 ![](img/copy-selector.png)
 
 There are many many things you can do with JavaScript, check out the [bookdown website](https://bookdown.org/yihui/blogdown/javascript.html)
+
+## Web sockets
+
+Q from the audience: can you talk about web sockets? 
+Yihui: yes, look [here](https://yihui.name/cn/2018/09/r-web-server/) (ignore Chinese if you don't speak it, just look at the code)
+
+Q from audience: aren't the help pages in R served by a server?
+Yihui: yes, there's a server as part of R-core, but it's not exported, so we can't use it. `httpuv` is the solution. 
