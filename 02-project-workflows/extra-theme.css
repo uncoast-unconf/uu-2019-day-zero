@@ -21,6 +21,16 @@
   float: right;
   padding-top: 1em;
 }
+.left-third {
+  width: 30%;
+  float: left;
+  padding-top: 1em;
+}
+.right-two-thirds {
+  width: 70%;
+  float: right;
+  padding-top: 1em;
+}
 
 .left-column-small {
   width: 12%;
@@ -33,11 +43,6 @@
   float: right;
 }
 
-.full {
-  width: 100%;
-  height: 92%;
-  float: right;
-}
 
 
 /* Modifications */
