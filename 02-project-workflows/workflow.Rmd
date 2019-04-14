@@ -72,7 +72,7 @@ It helps to eliminate the temptation to develop code directly in the R Console.
 
 #### Direction of causality:  
 
-- long-time coders don’t organize their work into self-contained projects and use relative paths because they use an IDE.  
+- Long-time coders don’t organize their work into self-contained projects and use relative paths because they use an IDE.  
 
 - They use an IDE because it makes it easier to follow standard practices, such as these.
 
@@ -254,6 +254,7 @@ Always set working directory to the same thing, namely to the top-level of the p
 |-- data
 |   -- data-clean.csv
 |   -- data-raw.csv
+|   -- data-results.csv
 |-- code
 |   -- analysis.R
 |   -- wrangle.R
@@ -513,6 +514,23 @@ From https://twitter.com/donohoe/status/597876118688026624.
 ## Staying organized
 
 <img src="img/files_messy_tidy.png" height="500px"/>
+
+---
+## A *humane* API for your analysis
+
+.pull-left[
+![](https://i.pinimg.com/564x/3c/12/40/3c1240a51e026474c7b13a8af719d3d9.jpg?b=t)
+]
+.pull-right[
+There are going to be files, LOTS of files
+
+The files will change over time
+
+The files will have relationships to each other
+
+It’ll probably get complicated
+
+]
 
 ---
 ## A *humane* API for your analysis
