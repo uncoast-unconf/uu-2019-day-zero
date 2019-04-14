@@ -1,0 +1,16 @@
+/* extra */
+
+.teach-left {
+  float: left;
+  width: 75%;
+}
+.teach-right {
+  float: right;
+  width: 20%;
+}
+
+.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
