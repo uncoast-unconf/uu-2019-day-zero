@@ -1,0 +1,97 @@
+---
+title: "Uncoast Unconf Day-Zero Workshop"
+subtitle: "git and Github cornucopia"
+date: "2019-04-14"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["default", "default-fonts", "extra.css"]
+    nature:
+      highlightStyle: github
+      ratio: "16:9"
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE, eval=FALSE, out.height='100%')
+```
+
+## git
+
+git is a version-control tool, typically used at the commandline. It's almost like a programming language, except it only does one thing (track changes to work). 
+
+It allows you to "commit" changes to work, and associate descriptive messages with those stages of your work. 
+
+There are other version control systems (most notably svn) but we're talking about git here because it works well with...
+
+---
+
+## GitHub
+
+GitHub is a website where you can share code with people on the internet. It is closely coupled with git, but you can use git without GitHub, and vice versa. 
+
+---
+
+## Versions
+
+
+![](img/lego-steps.png)
+
+(via [Mine Cetinkaya-Rundel](www2.stat.duke.edu/courses/Spring18/Sta199/))
+
+---
+
+## Versions
+
+![](img/lego-steps-commit-messages.png)
+
+(via [Mine Cetinkaya-Rundel](www2.stat.duke.edu/courses/Spring18/Sta199/))
+
+---
+
+## Trying to avoid 
+
+```{r echo=FALSE, eval=TRUE, fig.align='left'}
+knitr::include_graphics("img/phd101212s.gif")
+```
+---
+
+## What we're doing this morning 
+
+A high-level overview (I'll get more specific in a minute)
+
+1. Make sure everything is set up with your git
+2. Fork a GitHub repository (Jenny Bryan's [bingo R package](https://github.com/jennybc/bingo))
+3. Clone it to your computer
+4. Build the package locally 
+5. Make changes 
+6. Ensure the package still builds
+7. Commit changes
+8. Push changes to your fork of the repo
+9. Submit a pull request
+
+---
+
+## Making sure everything is set up
+
+In your RStudio, you should have a pane that has at least two tabs, one labeled Console and the other Terminal. The Console is just for `R` code, but the `Terminal` is more general, for commandline tools. To check you have git, open the Terminal tab and type 
+
+```
+git --version
+```
+
+If nothing comes up, talk to one of us about getting up to speed! Assuming you get something like
+
+```
+git version 2.10.1 (Apple Git-78)
+```
+
+then try 
+
+```
+git config --global --list
+```
+
+and ensure it at least knows your `user.name` and `user.email`
+
