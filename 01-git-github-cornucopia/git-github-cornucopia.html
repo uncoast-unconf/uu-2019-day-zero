@@ -79,7 +79,7 @@ A high-level overview (I'll get more specific in a minute)
 
 ## Making sure everything is set up
 
-In your RStudio, you should have a pane that has at least two tabs, one labeled Console and the other Terminal. The Console is just for `R` code, and the `Terminal` is more general, for commandline tools. 
+In your RStudio, you should have a pane that has at least two tabs, one labeled Console and the other Terminal. The Console is just for `R` code, and the Terminal is more general, for commandline tools. We'll be trying to do everything in the Console, but the Terminal is our fallback for git code. 
 
 Let's first make sure you have the `usethis` package. In your Console, type 
 
@@ -95,19 +95,13 @@ If you get an error, install the `usethis` package,
 install.packages("usethis")
 ```
 
-Then, let's check you have git. Open the Terminal tab and type 
+Then, let's check the situation report on your current git/Github status. 
 
-```
-git --version
-```
-
-If nothing comes up, talk to one of us about getting up to speed! Assuming you get something back, then try 
-
-```
-git config --global --list
+```{}
+git_siterep()
 ```
 
-and ensure it at least knows your `user.name` and `user.email`. If one or both of those things are missing, flag one of us, and/or follow the [Happy git with R advice](https://happygitwithr.com/hello-git.html). 
+Make sure that the User section at least knows your `Name` and `Email`. If one or both of those things are missing, flag one of us, and/or follow [Ian's day zero prep instructions](https://uncoast-unconf.github.io/uu-2019-day-zero/00-preparation/03-usethis/). 
 
 ---
 
@@ -161,7 +155,94 @@ You should now have a new RStudio project open, containing the code from the `bi
 
 ## The bingo package
 
-You can also go on GitHub to view Jenny Bryan's version of the code, at [https://github.com/jennybc/bingo](https://github.com/jennybc/bingo) and *your* version of the code, at `https://github.com/[whatever your GitHub username is]/bingo`. For example, mine is at [https://github.com/AmeliaMN/bingo](https://github.com/AmeliaMN/bingo)
+You can also go on GitHub to view Jenny Bryan's version of the code, at [https://github.com/jennybc/bingo](https://github.com/jennybc/bingo) and *your* version of the code, at `https://github.com/[whatever your GitHub username is]/bingo`. For example, mine is at [https://github.com/AmeliaMN/bingo](https://github.com/AmeliaMN/bingo).
+
+Right now, all these places look pretty much the same, but we're going to start contributing to the package. 
+
+---
+
+## Build tab
+
+Notice that the RStudio project for `bingo` has a new tab, called Build. This is because our project is for a package. 
+
+&lt;img src="img/build-tab.png" width='80%' class='centered'&gt;
+
+---
+
+## Install and Restart
+
+Let's begin by installing the package locally and restarting our R. Click the "Install and Restart" button and watch what happens in the pane and in the Console. 
+
+
+
+
+---
+
+## Play with the package
+
+This package doesn't do too terribly much, but you can try out some of the functions in the package, like
+
+
+```r
+get_topics()
+```
+
+```
+##  [1] "bad-data"          "Bingo_Flowers"     "boring-meeting"   
+##  [4] "conference-call"   "csama"             "football"         
+##  [7] "july4th"           "manuscript-review" "open-data"        
+## [10] "stat-ecology"      "useR-conf"         "WeeklyJump"
+```
+
+and then pick a topic to see the cards of, like
+
+
+```r
+get_topic("bad-data")
+```
+
+```
+##  [1] "Blank/null values aren't explained"                
+##  [2] "Data that \"must exist\" does not, in fact, exist" 
+##  [3] "Data that \"cannot exist\" does, in fact, exist"   
+##  [4] "Duplicate rows"                                    
+##  [5] "Metric? Imperial? Ask the dust ..."                
+##  [6] "65,535 or 2,147,483,647 or 4,294,967,295"          
+##  [7] "555-3485 or 867-5309"                              
+##  [8] "1970-01-01\nT00:00:00Z or 1969-12-31\nT23:59:59Z"  
+##  [9] "January 1st, 1900 or January 1st, 1904"            
+## [10] "Data is \"helpfully\" pre-aggregated"              
+## [11] "Aggregates and computed totals don't match"        
+## [12] "Line ending chaos ... \\n vs \\r\\n vs \\r"        
+## [13] "Yo, I hear you like metadata mixed with your data" 
+## [14] "Spreadsheet has exactly 65,536 rows"               
+## [15] "Missing data that passes for real data, eg 0 or 99"
+## [16] "Leading zeroes stripped to convert text to numbers"
+## [17] "Inexplicable outliers"                             
+## [18] "Garbled text suggests encoding problems"           
+## [19] "Data disguised as formatting"                      
+## [20] "Ambiguous American date formats, eg 03/04/16"      
+## [21] "\"Virgin Birth\", ie no provenance"                
+## [22] "Location of 0°N 0°E, ie \"Null Island\""           
+## [23] "Spelling mistakes that reek of hand-typed data"    
+## [24] "US zip codes 12345 or 90210"
+```
+
+---
+
+## Pull request
+
+Our eventual goal is to create a "pull request," to request that the GitHub repo owner (Jenny Bryan) incorporates our changes. 
+
+&lt;img src="img/fork-triangle-happy.png" width='73%' class='centered'&gt;
+
+via [Jenny Bryan and Happy git with R](https://happygitwithr.com/)
+
+---
+
+## Making a change
+
+I'm not going to talk about all the pieces of a package-- we'll get to that later today! So for now, just navigate into `bingo/inst/topics` (a folder within a folder in your Files pane) and click on one of the `.R` files there. It's
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
