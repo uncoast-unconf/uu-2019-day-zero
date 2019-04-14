@@ -58,3 +58,18 @@ Yihui inspected an element in his browser (image of Amanda), and edited the css 
 You can also filter images, invert them, blur them.... do you even need Photoshop??
 
 ![](img/invert.png)
+
+## Making an external stylesheet
+
+Again, we can make a file 
+```{r, eval=FALSE}
+file.edit('style.css')
+```
+
+And we can link this in our HTML `<link rel="stylesheet" href="style.css">`
+
+## Javascript
+
+Yihui claims he only knows two languages: R and JavaScript. JavaScript allows you to program a webpage. Again, we can edit things directly in a web browser. For example, open the browser Console and type some JavaScript code.
+
+![](img/javascript-style.png)
