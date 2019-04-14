@@ -2,7 +2,7 @@
 
 I'm going to give a crash course to those who are not familiar with HTML/CSS/JS. I'm not a professional web developer, but I guess I know enough basics. This will only be a very casual tutorial, and I don't have time to prepare slides for you (apologies!), but below is an outline:
 
-- The minimal tutorial: https://bookdown.org/yihui/blogdown/website-basics.html
+- The minimal tutorial: <https://bookdown.org/yihui/blogdown/website-basics.html>
 - HTML: https://www.w3schools.com/html/
 - CSS: https://www.w3schools.com/css/
 - JavaScript: https://www.w3schools.com/js/
