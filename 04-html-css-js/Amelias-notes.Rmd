@@ -43,5 +43,8 @@ You can also right-click on an element and select "Inspect" to see how any eleme
 
 You can style globally, using css. This doesn't need to be in a separate file, it can just be between `<style>` tags in the `<head>` of your document. For example, we added the styling for `p`, which works globally. 
 
-Another way to style things is with classes. 
+Another way to style things is with classes. If you have something set for a tag and something for a class, you get both. 
+
+But, you can also override styles with other styles. For example, the id rule will override the rule on p. 
+css has a heirarchical structure. You can define rules based on the order of elements on the page. `div > p` means a paragraph that is a direct child of div. With a space, it can be any descendent in the tree. `div p` could mean a paragraph that is a child, grandchild, etc. of the div
 
