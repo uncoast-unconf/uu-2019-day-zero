@@ -1,6 +1,6 @@
 # Packages
 
-This part of the course helps you get started to create packages; the material is contained in the [slides]](package-development.html).
+This part of the course helps you get started to create packages; the material is contained in the [slides](package-development.html).
 
 ## Requirements
 
