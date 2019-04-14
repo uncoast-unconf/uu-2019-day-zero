@@ -35,6 +35,8 @@ There are other version control systems (most notably svn) but we're talking abo
 
 GitHub is a website where you can share code with people on the internet. It is closely coupled with git, but you can use git without GitHub, and vice versa. 
 
+&lt;img src="img/github.png" class='centered'&gt;
+
 ---
 
 ## Versions
@@ -74,6 +76,12 @@ A high-level overview (I'll get more specific in a minute)
 7. Commit changes
 8. Push changes to your fork of the repo
 9. Submit a pull request
+
+If we have time...
+
+10. Filing effective issues
+11. Recovering from Git(Hub) failure
+12. .gitignore
 
 ---
 
@@ -290,7 +298,17 @@ Now that you've saved a change, you should see at least one thing in your git pa
 
 ## Commit your change
 
-Now, it's time to "commit" your change. This checks your changes into the git version control system. It's essentially telling git you have done something worth keeping track of. But, don't feel like you have to save this for a big change! In fact, it's best to commit early and often! Click the commit button to get a pane to pop up showing the changes you can potentially commit. 
+Now, it's time to "commit" your change. This checks your changes into the git version control system. It's essentially telling git you have done something worth keeping track of. But, don't feel like you have to save this for a big change! In fact, it's best to commit early and often! 
+
+&lt;img src="img/graph.png" width='50%' class='centered'&gt;
+
+via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc) and [Martin Fowler](https://martinfowler.com/bliki/FrequencyReducesDifficulty.html)
+
+---
+
+## Commit your change
+
+Click the commit button to get a pane to pop up showing the changes you can potentially commit. 
 
 &lt;img src="img/bingo-commit.png" width='70%' class='centered'&gt;
 
@@ -334,16 +352,36 @@ If your pull request isn't quite ready, it might be the case that you need to go
 ---
 
 
-# filing effective issues
 
+## Filing effective issues
+
+Usually, GitHub issues are used to track, well... issues. 
+For example, [fct_lump() does not respect asking for most common n - 1 values #184](https://github.com/tidyverse/forcats/issues/184)
+
+&lt;img src="img/forcats-issue.png" width='80%' class='centered'&gt;
+
+To [file an issue](https://www.tidyverse.org/contribute/#issues), you usually need to start with a [reprex](https://www.tidyverse.org/help/#reprex).
 
 ---
+
+## Using (and abusing?) issues
+
+Because we have this handy way to have conversation online, we often use issues for use cases they were not designed for. For example, for the unconf we've been [discussing dress code](https://github.com/uncoast-unconf/uu-2019/issues/21), [introducing ourselves](https://github.com/uncoast-unconf/uu-2019-day-zero/issues/11), etc.
+
+
+We've also been using issues to [discuss ideas for projects to work on](https://github.com/uncoast-unconf/uu-2019/issues) for the unconf. Let's take some time and look through those issues. Feel free to comment on issues that interest you, and/or create new issues! 
+
+---
+
 
 ## Recovering from Git(Hub) failure
 
 Scenario: You try to push and cannot
+
 What's the problem?
+
 There are changes on GitHub that you don't have.
+
 Pull. If the gods smile upon you, merge works. Now push.
 
 via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
@@ -353,9 +391,13 @@ via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
 ## Recovering from Git(Hub) failure
 
 Let's create this situation.
+
 Make sure local Git pane is clear.
+
 Make sure local and remote are synced (push, pull).
-Edit &amp; commit to file A locally. Edit &amp; commit to file B remotely.
+
+Edit &amp; commit to file *A* locally. Edit &amp; commit to file *B* remotely.
+
 Try to push. You will fail.
 
 via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
@@ -375,6 +417,7 @@ hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 Remedy? Do what it says!
+
 pull, then push ... pull, then push ... pull, then push
 
 via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
@@ -384,7 +427,9 @@ via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
 ## Recovering from Git(Hub) failure
 
 Look at your Git history.
+
 You will see a merge commit, where the local and remote changes were reconciled.
+
 This is best case scenario and is likely with good Git habits (lots of small frequent commits and merges, no binary files in repo).
 
 via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
@@ -394,9 +439,13 @@ via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
 ## Recovering from Git(Hub) failure
 
 Recovering from Git(Hub) failure Scenario: You pull and get a merge conflict.
+
 What's the problem?
-GitHub can't figure out how to reconcile di s.
+
+GitHub can't figure out how to reconcile diffs.
+
 Resolve the conflicts.
+
 Or abort ... and come back later.
 
 via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
@@ -406,10 +455,15 @@ via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
 ## Recovering from Git(Hub) failure
 
 Let's create this situation.
+
 Make sure local Git pane is clear.
+
 Make sure local and remote are synced (push, pull).
-Edit &amp; commit to file A locally.
-Make conflicting edit &amp; commit to file A remotely.
+
+Edit &amp; commit to file *A* locally.
+
+Make conflicting edit &amp; commit to file *A* remotely.
+
 Try to push. You will fail. Try to pull. You will fail. All is fail.
 
 via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
@@ -434,9 +488,26 @@ via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
 
 ---
 
-# .gitignore
+## .gitignore
+
+If there are things you don't want to check in to git and/or send to GitHub, you can either 
+
+- be careful not to check the boxes next to those files when you commit, 
+- or (more robust) add things to your `.gitignore` file
+
+If you've `git_vaccinate()`-ed yourself, you already have a pretty good `.gitignore` file! For example, you'll ignore the [.DS_Store crap](https://yihui.name/en/2017/09/ds-store-crap/). 
+
+If you have other things you want to ignore in git, like sensitive data, big files, etc., you can edit your `.gitignore`. As always, there are many ways to do this, but we'll use the `usethis` way!
+
+
+```r
+edit_git_ignore(scope="user")
+edit_git_ignore(scope="project")
+```
 
 ---
+
+# Thanks!
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
