@@ -200,12 +200,108 @@ via [Jenny Bryan and Happy git with R](https://happygitwithr.com/)
 
 ---
 
-## Getting ready
+## Getting ready -- branch
 
 Before we start making changes, we should prepare for eventually making a pull request (often abbreviated PR when people are writing about them). We'll use the `pr_init()` function to do this. 
+
+It's best practice to use a separate "branch" when you make contributions. The main version of the code is hosted in the "master" branch (you can probably see that word in the top right of your git pane) and your contributions might not initially synch up with that version. 
+
+<img src="img/git-branches-1.png" width='30%' class='centered'>
+
+via [tinned-software](https://blog.tinned-software.net/create-and-merge-git-branches/)
+
+---
+
+## Getting ready -- branch
+
+We'll branch off from the master using `pr_init()`. You need to come up with a name for your branch, and that name can be anything you want. 
+
+```{r}
+pr_init("amelia") # this is kind of a bad branch name, you probably want to be more descriptive!
+```
+
+Run some `pr_init()` code in your Console and see what prints. What happened to the top right of your git pane?
+
 
 ---
 
 ## Making a change
 
-I'm not going to talk about all the pieces of a package-- we'll get to that later today! So for now, just navigate into `bingo/inst/topics` (a folder within a folder in your Files pane) and click on one of the `.R` files there. It's 
+I'm not going to talk about all the pieces of a package-- we'll get to that later today! So for now, just navigate into `bingo/inst/topics` (a folder within a folder in your Files pane) and click on one of the `.R` files there. It's filled with topics for a bingo card. There are a couple ways you could contribute to the package:
+
+- make a whole new bingo card (at least 24 topics!)-- this one is probably best as a group
+- add some topics to an existing bingo card
+- ??
+
+Let's take some time to make a change somewhere in the package. If you're making a new card, you'll need to start a new `.R` file, and if you're adding topics to an existing card, just edit that `.R` file. 
+
+Make sure you save your changes! 
+
+---
+
+## Notice where changes appear
+
+Now that you've saved a change, you should see at least one thing in your git pane. 
+
+<img src="img/bingo-change.png" width='80%' class='centered'>
+
+---
+
+## Commit your change
+
+Now, it's time to "commit" your change. This checks your changes into the git version control system. It's essentially telling git you have done something worth keeping track of. But, don't feel like you have to save this for a big change! In fact, it's best to commit early and often! Click the commit button to get a pane to pop up showing the changes you can potentially commit. 
+
+<img src="img/bingo-commit.png" width='70%' class='centered'>
+
+---
+
+## Commit your change
+
+Select whatever you are interested in committing using the checkboxes. Then, write a "commit message" (a short description of what you've done) in the box that asks for the message, and click Commit. You'll get a bit of a message that indicates you've successfully committed. You can close that message. 
+
+<img src="img/bingo-commit-check.png" width='70%' class='centered'>
+
+---
+
+## Push your changes
+
+Again, there are many ways to push changes to GitHub. We're going to use the `usethis` method. 
+
+```{r}
+pr_push()
+```
+
+---
+
+## Push your changes
+
+Running this code will push your changes to your GitHub repository and initialize a pull request on the main repo (in this case, Jenny Bryan's repo). A browser window will pop up and show you how your pull request looks. If it's good to go, click the green button.  
+
+<img src="img/PR_bingo.png" width='80%' class='centered'>
+
+---
+
+## Not quite ready?
+
+If your pull request isn't quite ready, it might be the case that you need to go back and make some more changes. You can go back to RStudio, make another change, save it, commit it, and `pr_push()` again. 
+
+---
+
+# If we have time...
+
+---
+
+
+## filing effective issues
+
+--- 
+
+
+## merge conflicts
+
+---
+
+## .gitignore
+
+---
+
