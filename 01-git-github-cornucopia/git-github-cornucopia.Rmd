@@ -306,6 +306,35 @@ If your pull request isn't quite ready, it might be the case that you need to go
 
 ---
 
+## Error?
+
+If you get an error saying you can't push because you don't own the repo, your "remotes" are probably mis-configured. You can't push directly to Jenny Bryan's repository, you need to push to *your* GitHub repository. To fix this issue, try something along these lines:
+
+```{r}
+use_git_remote(name = "origin", url="https://github.com/AmeliaMN/bingo.git", overwrite=TRUE)
+
+# substitute your github username for mine
+use_git_remote(name = "upstream", url ="https://github.com/jennybc/bingo.git", overwrite=TRUE)
+```
+
+Now, check to make sure this looks right with 
+
+```{r}
+git_remotes()
+```
+
+Should look vaguely like this:
+```
+$origin
+[1] "https://github.com/AmeliaMN/bingo.git"
+
+$upstream
+[1] "https://github.com/jennybc/bingo.git"
+
+```
+
+---
+
 # If we have time...
 
 ---
