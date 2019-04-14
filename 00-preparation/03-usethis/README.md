@@ -1,8 +1,9 @@
 # usethis
 
-This week only one set of slides and one video - this will work identically on mocOS and Windows.
+[Slides](00-usethis.html)
 
-- [slides](00-usethis.html) for this week
+---
+
 This week you'll find out why I have been reminding you to have access to your GitHub credentials.
 
 ### References

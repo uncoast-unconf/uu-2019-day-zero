@@ -7,10 +7,13 @@
 
 The goal of uu-2019-day-zero is to serve as repository for our day-zero workshop at [Uncoast Unconf 2019](https://uuconf.rbind.io/).
 
+This material is presented by Amelia McNamara, Haley Jeppson, Ian Lyttle, and Yihui Xie.
+
 - [Day-zero Preparation](00-preparation/README.md)
 - [Git and GitHub Cornucopia](01-git-github-cornucopia/README.md)
 - [Project Workflows](02-project-workflows/README.md)
 - [Packages](03-packages/README.md)
+- [HTML-CSS-JS](04-html-css-js/README.md)
 
 This work is released under the [MIT License](LICENSE.md).
 

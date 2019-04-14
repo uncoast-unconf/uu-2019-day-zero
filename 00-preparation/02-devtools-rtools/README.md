@@ -1,8 +1,8 @@
 # devtools
 
-There is only one slide deck:
+[Slides](00-review-devtools.html)
 
-- [Review and devtools](00-review-devtools.html), for everyone
+---
 
 ## Review
 
