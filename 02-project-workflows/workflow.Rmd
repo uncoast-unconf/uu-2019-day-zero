@@ -188,26 +188,55 @@ background-position: 0% 50%
 ### `setwd("path/that/only/works/on/my/machine")`
 The chance of the `setwd()` command having the desired effect – making the file paths work – for anyone besides its author is 0%. 
 
-It’s also unlikely to work for the author one or two years or computers from now.]
+It’s also unlikely to work for the author one or two years or computers from now.
+
+]
 
 ???
-## Dilemma and solution
 
-**The Dilemma:**
+Hard-wired, absolute paths, especially when sprinkled throughout the code, make a project brittle. 
 
-We want to work on project A with R’s working directory set to path/to/projectA and on project B with R’s working directory set to path/to/projectB.
+Such code does not travel well across time or space.
+
+---
+background-image: url(https://pics.me.me/look-into-your-hard-drive-and-open-your-mercy-file-7551660.png)
+background-size: 500px
+background-position: 0% 50%
+
+.right-plus[
+### `setwd("path/that/only/works/on/my/machine")`
+
+**Absolute path**
+```
+library(ggplot2)
+setwd("/Users/jenny/cuddly_broccoli/verbose_funicular/foofy/data")
+df <- read.delim("raw_foofy_data.csv")
+p <- ggplot(df, aes(x, y)) + geom_point()
+ggsave("../figs/foofy_scatterplot.png")
+```
+
+### vs.
 
 
-But we also want to keep code like `setwd("path/to/projectA")` out of our .R scripts.
+**Relative path**
 
+```
+library(ggplot2)
+library(here)
 
-**Solutions:**
+df <- read.delim(here("data", "raw_foofy_data.csv"))
+p <- ggplot(df, aes(x, y)) + geom_point()
+ggsave(here("figs", "foofy_scatterplot.png"))
+```
+]
 
-Set the working directory yourself, interactively, at the same time as you restart R, when you switch from project A to project B. 
+???
 
-Use an IDE that supports a project-based workflow. This eliminates the tension between your development convenience and the portability of the code.
+BUT, if you still decide to use setwd() in your scripts, you should at least be very disciplined about it:
 
+Only use setwd() at the very start of a file, i.e. in an obvious and predictable place. If someone has to hand-edit all of these, make it easy for them.
 
+Always set working directory to the same thing, namely to the top-level of the project (not a subdirectory). Always build subsequent paths relative to that.
 ---
 ## Adopt a project-oriented workflow
 
@@ -219,48 +248,118 @@ Use an IDE that supports a project-based workflow. This eliminates the tension b
 
 - Eliminates the tension between your development convenience and the portability of the code.
 
-
+.right-two-thirds[
+```
+.project_name/
+|-- data
+|   -- data-clean.csv
+|   -- data-raw.csv
+|-- code
+|   -- analysis.R
+|   -- wrangle.R
+|-- figs
+|   -- barchart.png
+|-- report.Rmd
+```
+]
 ???
-This convention guarantees that the project can be moved around on your computer or onto other computers and will still “just work”. 
+Portability: the project can be moved around on your computer or onto other computers and will still "just work".This is the only practical convention that creates reliable, polite behavior across different computers/users/time. This convention is neither new, nor unique to R.
 
 ---
 ## RStudio Projects
 
-The RStudio IDE (capital "P") Project  
-- a very effective implementation of the (small "p") projects.
+**The RStudio IDE (capital "P") Project:** a very effective implementation of the (small "p") projects.
+.left-third[
 
-#### Why?
+<img src=https://jules32.github.io/streamlined-workflows/images/rstudio-project-switching.png height="380px"/>
 
-`r emo_up` They are the same “unit” as a GitHub repo!
+]
+.right-two-thirds[
+#### Benefits of working in a Project:
 
-`r emo_up` You can have multiple Projects going at once!
+- They are the same “unit” as a GitHub repo!
+
+- You can designate a new or existing folder as a Project. 
+
+  - Use `File > New Project ...` to get started.
+
+- You can have multiple Projects going at once!
+  
+  - Each will have its own R process, global workspace, and working directory.
+
+- RStudio knows about recently used Projects. 
+
+  ]
+  
+???
+You can designate a new or existing folder as a Project. 
+
+- RStudio leaves a file, e.g., `name.Rproj`, in the folder to store settings specific to that project. 
+
+You can have multiple Projects going at once!
+
+Double-click on a .Rproj file to open a fresh instance of RStudio.
+
+This allows rapid context switching across several projects, such as an R package, teaching material, and a data analysis. There is no danger of crosstalk between the projects: each has its own R process, global workspace, and working directory.
+
+RStudio knows about recently used Projects. 
+
+Once you decide "I want to do some work in Project K", there are various ways to accelerate the startup process.
+
+Once you are in RStudio, there are several ways to access other Projects you've recently worked in. In the upper right corner is a drop-down menu with various Project- and session-related goodies in it.
 
 ---
 background-image: url(https://pbs.twimg.com/media/DtlqyWZVAAIuylm.jpg:large)
 background-size: 600px
 background-position: 50% 80%
 class: inverse, center
-# Practice Safe Paths
+# Practice "safe paths"
 
 ---
 ## Tips to avoid `setwd()`
 
-#### The `fs` package
+#### Use projects and the `here` package:
 
-- filepath handling
+- Organize each logical project into a folder on your computer.
 
-#### The `here()` package
+- Make sure the top-level folder advertises itself as such. 
+  
+  - This can be as simple as having an empty file named `.here`. 
+  
+  - If you use RStudio and/or Git, characteristic files are left behind that will get the job done.
 
-- project-relative paths  
+- Use the `here::here()` function to build the path when you read or write a file.
 
-- identifies your project's files, based on the current working directory at the time when the package is loaded.
-
+  - Create paths relative to the top-level directory.
 
 ---
-## Create a stable base
+## The `here` package
+
+#### What does here think the top-level of current project is?
+
+`here::here()`  
+`#> [1] "/home/haley/Documents/project"`
 
 
+<br />
+#### Bulid a path to something in a subdirectory:
 
+`here("one", "two", "awesome.txt")`  
+`#> [1] "/home/haley/Documents/project/one/two/awesome.txt"`  
+<br />
+
+#### This will run, with no edits, for anyone who follows the convention about launching R <br />in the project folder.
+
+.footnote[
+For more, read Jenny Bryan's post
+[Ode to the here package
+](https://github.com/jennybc/here_here).
+]
+
+???
+here::here() figures out the top-level of your current project using some sane heuristics. It looks at working directory, checks a criterion and, if not satisfied, moves up to parent directory and checks again. Lather, rinse, repeat.
+
+If no criteria match, the current working directory will be used as fallback.
 ---
 background-image: url(https://www.huridocs.org/wp-content/uploads/2016/07/filenaming-comic.png)
 background-size: 300px
@@ -446,6 +545,15 @@ The more things are self-explanatory, the better
 ---
 ## Data analysis workflow
 
+<br />
+.pull-left[
+<table style="border-collapse:collapse;border-spacing:0;border-width:1px;border-style:solid;border-color:#ccc" class="tg"><tr><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#f0f0f0;text-align:left">Stage</th><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#f0f0f0;text-align:left">Input</th><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#f0f0f0;text-align:left">Code</th><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#f0f0f0;text-align:left">Output</th></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#f9f9f9;text-align:left">Import</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#f9f9f9;text-align:left"></td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#f9f9f9;text-align:left"></td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#f9f9f9;text-align:left"></td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#fff;text-align:left">Tidy</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#fff;text-align:left">data/raw-data.xlsx</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#fff;text-align:left">code/wrangle.R</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#fff;text-align:left">data/cleaned-data.csv</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#f9f9f9;text-align:left">Transform,<br>Visualize,<br>&amp; Model</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#f9f9f9;text-align:left">data/cleaned-data.csv</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#f9f9f9;text-align:left">code/model.R</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#f9f9f9;text-align:left">figs/hist.png<br>figs/scatter.png<br>data/fits.rds<br>data/ests.csv<br></td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#fff;text-align:left;vertical-align:top">Communicate</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#fff;text-align:left;vertical-align:top">figs/*<br>data/ests.csv</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#fff;text-align:left;vertical-align:top">report.Rmd</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#000000;color:#333;background-color:#fff;text-align:left;vertical-align:top">report.html<br>report.pdf<br>report.docx<br></td></tr></table>
+
+]
+.pull-right[
+<br />
+<img src=https://pbs.twimg.com/media/CuQZmaLVMAAAi-j.jpg height=200px>
+]
 
 ---
 class: inverse, center
@@ -456,15 +564,46 @@ class: inverse, center
 ---
 ## Troubleshooting
 
-#### When in doubt, upgrade
-
-Your issue may be automatically solved by simply upgrading.
-
 #### Restart your R session
 
 
+#### When in doubt, upgrade
 
+- Your issue may be automatically solved by simply upgrading.
 
+#### Look for help
+
+- google exact error message
+
+- Keyword search community.rstudio.com
+
+- Stackoverflow - [r] tag
+
+- read the source code
+
+#### Ask for help
+
+- Make a reprex
+
+???
+Writing a reprex for the problem you’re encountering is one of the best ways to demonstrate that you are being considerate of the people who are going to help you solve the error(s) in your code.
+
+---
+## How to achieve reprex-cellence<sup>1</sup>
+
+#### A minimal reproducible example consists of the following items:
+
+- a minimal dataset, necessary to reproduce the error
+
+- the minimal runnable code necessary to reproduce the error, which can be run on the given dataset.
+
+- the necessary information on the used packages, R version, and system it is run on.
+
+- in the case of random processes, a seed (set by `set.seed()`) for reproducibility
+
+.footnote[
+[1] Thanks to [Mara Averick](https://maraaverick.rbind.io/2018/06/reprexcellence/#fn1) for that portmanteau
+]
 ---
 ## Make a reprex in 2 steps
 
@@ -472,7 +611,7 @@ Your issue may be automatically solved by simply upgrading.
 
 - Make sure you capture everything
 
-  - i.e., include any library() calls and create all necessary objects  
+  - i.e., include any `library()` calls and create all necessary objects  
 
 - This can be done with the `reprex` package
 
@@ -482,44 +621,19 @@ Your issue may be automatically solved by simply upgrading.
 
   - remove as many add-on packages in the example as possible 
 
-- Create a much smaller and simpler R object than the one you’re facing in real life 
+- Create a much smaller and simpler R object than the one you’re facing in real life and use `dput()` to generate the R code to recreate the data.
 
   - consider replacing real data with simpler built-in datasets and see if the problem persists
 
   
-#### The more irrelevant content, the slower it is for [the helper] to figure out the root issue. 
+#### The more irrelevant content, the slower/harder it is to figure out the root issue. 
 
----
-## The `reprex` package
-
-```{r message=FALSE, warning=FALSE}
-
-```
-<!--
-Write a bit of code and copy it to the clipboard:
-
-Enter `reprex()` in the R Console. In RStudio, you’ll see a preview of your rendered reprex.
-
-It is now ready and waiting on your clipboard, so you can paste it into, say, a GitHub issue.
-
-If your code is not self-contained, running `reprex()` results in an error.
--->
 ---
 background-image: url(http://bryanavery.co.uk/wp-content/uploads/2018/11/hero-snapshot-debugger.png)
 background-size: 900px
 background-position: 50% 80%
 class: inverse, center
 # Debugging
-
----
-## Looking for help
-
-
-1. google exact error message
-
-2. Keyword search community.rstudio.com
-
-3. Stackoverflow - [r] tag
 
 ---
 ## Debugging
