@@ -2,7 +2,7 @@
 title: "Amelia's notes"
 author: "Amelia McNamara"
 date: "4/14/2019"
-output: github_document
+output: html_document
 ---
 
 Yihui said he wasn't going to use slides, but do some live-coding. I decided to take some notes here and commit them to the day 0 repo so they would be available. 
