@@ -1,5 +1,9 @@
 # R and git
 
+Slides: [macOS](r-git-macos.html), [Windows](r-git-windows.html).
+
+---
+
 Our goal is for everyone's computer to have a "sufficiently-current" version of R and access to git.
 
 Accordingly, we are encouraging folks to have a version of R >= 3.4, and to have git accessible from the command-line.
@@ -77,6 +81,6 @@ On Windows, I get this:
 git version 2.21.0.windows.1
 ```
 
-## Slides
 
-Here are links to the slides for this week's topics for [macOS](r-git-macos.html) and [Windows](r-git-windows.html).
+
+
