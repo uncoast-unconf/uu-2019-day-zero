@@ -56,7 +56,7 @@ Also the means for sharing stuff:
 ## Caveat and Assumptions
 
 
-This will cover what you need to get **started** creating packages, 
+We will go through what you need to get **started** creating packages. 
 
 --
 
@@ -735,7 +735,7 @@ To deploy your website using GitHub pages:
 
 - go to the web-page for your GitHub repository
 
-- `r emo::ji("gear")` **Settings** > **GitHub Pages** > **Source**:
+- `r emo::ji("gear")` **Settings** > **GitHub Pages** > **Source**
 
 - set to **master branch /docs folder** 
 
@@ -790,7 +790,7 @@ knitr::include_graphics("workspace/img-nouns/all.png")
  - [Tidyverse principles](https://principles.tidyverse.org)
  - Ian's [favorite issue](https://github.com/r-lib/httr2/issues/1)
  
-`r emo::ji("raised_hands")` Roxygen life-savers
+`r emo::ji("raised_hands")` Roxygen life-savers:
 
   - `@inheritParams my_fun`
   - `@inherit my_fun return`
