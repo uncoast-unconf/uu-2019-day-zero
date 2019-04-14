@@ -114,4 +114,6 @@ css: ["chocolate"]
 ``` 
 into your xaringan header. 
 
-If you dig into those files, you'll see that fonts are specified separately. For example, look at the [fonts for chocolate](https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/resources/chocolate-fonts.css)
+If you dig into those files, you'll see that fonts are specified separately. For example, look at the [fonts for chocolate](https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/resources/chocolate-fonts.css). 
+
+When you don't want to use the fonts of the theme, you can choose not to use the `*-fonts.css` file. If the theme contained the fonts declaration, you're wasting bandwith to import fonts without using them. 
