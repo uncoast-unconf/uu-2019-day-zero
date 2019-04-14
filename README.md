@@ -13,7 +13,7 @@ This material is presented by Amelia McNamara, Haley Jeppson, Ian Lyttle, and Yi
 - [Git and GitHub Cornucopia](01-git-github-cornucopia/README.md)
 - [Project Workflows](02-project-workflows/README.md)
 - [Packages](03-packages/README.md)
-- [HTML-CSS-JS](04-html-css.js/README.md)
+- [HTML-CSS-JS](04-html-css-js/README.md)
 
 This work is released under the [MIT License](LICENSE.md).
 
