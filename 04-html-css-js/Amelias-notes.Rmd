@@ -87,3 +87,29 @@ Yihui: yes, look [here](https://yihui.name/cn/2018/09/r-web-server/) (ignore Chi
 
 Q from audience: aren't the help pages in R served by a server?
 Yihui: yes, there's a server as part of R-core, but it's not exported, so we can't use it. `httpuv` is the solution. 
+
+
+## Using css with xaringan
+
+Ooh, I didn't know about the add-in of Infinite Moon Reader. It will show your slides live. This would have made my life easier...
+
+We can make custom css for xaringan slides.
+
+The third magic... the whole RStudio IDE is actually a web browser. So you can right-click on anything inside RStudio to inspect it. If you right-click on a slide and Inspect it, you'll see they're in class
+```
+class="remark-slide-content center middle inverse title-slide hljs-github"
+```
+So, then we could add that to our css... (I think this is right?? Not totally sure)
+```
+.remark-slide-content {
+
+}
+```
+
+If you make a good css theme, you can make a PR to Yihui's package. Put the .css into this deep directory, [inst/rmarkdown/templates/xaringan/resources](https://github.com/yihui/xaringan/tree/master/inst/rmarkdown/templates/xaringan/resources)
+
+If you want to use one, put
+```
+css: ["chocolate"]
+``` 
+into your xaringan header. 
