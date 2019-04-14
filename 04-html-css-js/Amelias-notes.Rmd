@@ -113,3 +113,5 @@ If you want to use one, put
 css: ["chocolate"]
 ``` 
 into your xaringan header. 
+
+If you dig into those files, you'll see that fonts are specified separately. For example, look at the [fonts for chocolate](https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/resources/chocolate-fonts.css)
