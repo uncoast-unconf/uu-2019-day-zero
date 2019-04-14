@@ -78,3 +78,4 @@ If you want to know exactly what element you're looking at, you can right-click 
 
 ![](img/copy-selector.png)
 
+There are many many things you can do with JavaScript, check out the [bookdown website](https://bookdown.org/yihui/blogdown/javascript.html)
