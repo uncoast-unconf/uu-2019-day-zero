@@ -74,7 +74,7 @@ You have gone through the day-zero prep:
 
 ----
 
-`r emo::ji("scream_cat")` `install.packages(c("pkgdown", "forcats"))`
+`r emo::ji("scream_cat")` `install.packages(c("testthat", "pkgdown", "forcats"))`
 
 ---
 
@@ -94,7 +94,7 @@ You have gone through the day-zero prep:
 
 ----
 
-`r emo::ji("scream_cat")` `install.packages(c("pkgdown", "forcats"))`
+`r emo::ji("scream_cat")` `install.packages(c("testthat", "pkgdown", "forcats"))`
 
 ---
 
