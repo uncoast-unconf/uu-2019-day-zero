@@ -14,7 +14,8 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE, eval=FALSE, out.height='100%')
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(eval=FALSE, out.height='100%')
 ```
 
 ## git
@@ -35,33 +36,33 @@ GitHub is a website where you can share code with people on the internet. It is 
 
 ## Versions
 
+<img src="img/lego-steps.png" class='centered'>
 
-![](img/lego-steps.png)
-
-(via [Mine Cetinkaya-Rundel](www2.stat.duke.edu/courses/Spring18/Sta199/))
+via [Mine Cetinkaya-Rundel](www2.stat.duke.edu/courses/Spring18/Sta199/)
 
 ---
 
 ## Versions
 
-![](img/lego-steps-commit-messages.png)
+<img src="img/lego-steps-commit-messages.png" class='centered'>
 
-(via [Mine Cetinkaya-Rundel](www2.stat.duke.edu/courses/Spring18/Sta199/))
+via [Mine Cetinkaya-Rundel](www2.stat.duke.edu/courses/Spring18/Sta199/)
 
 ---
 
-## Trying to avoid 
+## What we're trying to avoid 
 
-```{r echo=FALSE, eval=TRUE, fig.align='left'}
-knitr::include_graphics("img/phd101212s.gif")
-```
+<img src="img/phd101212s.gif" width='40%' class='centered'>
+
+[PhD comics](http://phdcomics.com/comics/archive.php?comicid=1531)
+
 ---
 
 ## What we're doing this morning 
 
 A high-level overview (I'll get more specific in a minute)
 
-1. Make sure everything is set up with your git
+1. Make sure everything is set up on your computer
 2. Fork a GitHub repository (Jenny Bryan's [bingo R package](https://github.com/jennybc/bingo))
 3. Clone it to your computer
 4. Build the package locally 
@@ -75,23 +76,83 @@ A high-level overview (I'll get more specific in a minute)
 
 ## Making sure everything is set up
 
-In your RStudio, you should have a pane that has at least two tabs, one labeled Console and the other Terminal. The Console is just for `R` code, but the `Terminal` is more general, for commandline tools. To check you have git, open the Terminal tab and type 
+In your RStudio, you should have a pane that has at least two tabs, one labeled Console and the other Terminal. The Console is just for `R` code, and the `Terminal` is more general, for commandline tools. 
+
+Let's first make sure you have the `usethis` package. In your Console, type 
+
+```{r}
+library(usethis)
+```
+
+If you get an error, install the `usethis` package,
+
+```{r}
+install.packages("usethis")
+```
+
+Then, let's check you have git. Open the Terminal tab and type 
 
 ```
 git --version
 ```
 
-If nothing comes up, talk to one of us about getting up to speed! Assuming you get something like
-
-```
-git version 2.10.1 (Apple Git-78)
-```
-
-then try 
+If nothing comes up, talk to one of us about getting up to speed! Assuming you get something back, then try 
 
 ```
 git config --global --list
 ```
 
-and ensure it at least knows your `user.name` and `user.email`
+and ensure it at least knows your `user.name` and `user.email`. If one or both of those things are missing, flag one of us, and/or follow the [Happy git with R advice](https://happygitwithr.com/hello-git.html). 
 
+---
+
+## Fork and clone a repo
+
+**Forking** a GitHub repository is essentially making your own copy of the code as it stands right now. 
+
+<img src="img/fork.png" width='75%' class='centered'>
+
+
+via [Jenny Bryan and Happy git with R](https://happygitwithr.com/)
+
+---
+
+## Fork and clone a repo
+**Cloning** is getting the files onto your own computer
+
+<img src="img/clone-yours.png" width='75%' class='centered'>
+
+via [Jenny Bryan and Happy git with R](https://happygitwithr.com/)
+
+---
+## Fork and clone a repo
+Usually you do them together,
+
+<img src="img/fork-and-clone.png" width='75%' class='centered'>
+
+
+via [Jenny Bryan and Happy git with R](https://happygitwithr.com/)
+
+---
+
+## Fork and clone a repo
+
+There are several different ways to fork and clone a repo. We'll be following the `usethis` way, using the `create_from_github()` function. This does all the work for us! Run this code in your Console and watch what prints. 
+
+```{r create}
+create_from_github("jennybc/bingo", protocol = "https")
+```
+
+---
+
+## The bingo package
+
+You should now have a new RStudio project open, containing the code from the `bingo` package. 
+
+<img src="img/bingo-code.png" width='80%' class='centered'>
+
+---
+
+## The bingo package
+
+You can also go on GitHub to view Jenny Bryan's version of the code, at [https://github.com/jennybc/bingo](https://github.com/jennybc/bingo) and *your* version of the code, at `https://github.com/[whatever your GitHub username is]/bingo`. For example, mine is at [https://github.com/AmeliaMN/bingo](https://github.com/AmeliaMN/bingo)
