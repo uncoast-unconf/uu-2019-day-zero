@@ -332,6 +332,111 @@ If your pull request isn't quite ready, it might be the case that you need to go
 # If we have time...
 
 ---
+
+
+# filing effective issues
+
+
+---
+
+## Recovering from Git(Hub) failure
+
+Scenario: You try to push and cannot
+What's the problem?
+There are changes on GitHub that you don't have.
+Pull. If the gods smile upon you, merge works. Now push.
+
+via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
+
+---
+
+## Recovering from Git(Hub) failure
+
+Let's create this situation.
+Make sure local Git pane is clear.
+Make sure local and remote are synced (push, pull).
+Edit &amp; commit to file A locally. Edit &amp; commit to file B remotely.
+Try to push. You will fail.
+
+via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
+
+---
+
+## Recovering from Git(Hub) failure
+
+```
+jenny@2015-mbp bunny-scarf $ git push &amp; To github.com:jennybc/bunny-scarf.git
+ ! [rejected]        master -&gt; master (fetch first)
+error: failed to push some refs to 'git@github.com:jennybc/bunny-scarf.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+Remedy? Do what it says!
+pull, then push ... pull, then push ... pull, then push
+
+via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
+
+---
+
+## Recovering from Git(Hub) failure
+
+Look at your Git history.
+You will see a merge commit, where the local and remote changes were reconciled.
+This is best case scenario and is likely with good Git habits (lots of small frequent commits and merges, no binary files in repo).
+
+via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
+
+---
+
+## Recovering from Git(Hub) failure
+
+Recovering from Git(Hub) failure Scenario: You pull and get a merge conflict.
+What's the problem?
+GitHub can't figure out how to reconcile di s.
+Resolve the conflicts.
+Or abort ... and come back later.
+
+via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
+
+---
+
+## Recovering from Git(Hub) failure
+
+Let's create this situation.
+Make sure local Git pane is clear.
+Make sure local and remote are synced (push, pull).
+Edit &amp; commit to file A locally.
+Make conflicting edit &amp; commit to file A remotely.
+Try to push. You will fail. Try to pull. You will fail. All is fail.
+
+via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
+
+---
+
+## Recovering from Git(Hub) failure
+
+```
+From github.com:jennybc/bunny-scarf
+   958548f..3357952  master     -&gt; origin/master
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Wingardium Leviosaaaaaaaa
+=======
+Wing-GAR-dium Levi-O-sa
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 33579525d88af071268b0a0c64c54f357712589a
+```
+via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
+
+---
+
+# .gitignore
+
+---
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

@@ -292,18 +292,14 @@ If your pull request isn't quite ready, it might be the case that you need to go
 ---
 
 
-## filing effective issues
+# filing effective issues
 
---- 
-
-
-## merge conflicts
 
 ---
 
-## 
+## Recovering from Git(Hub) failure
 
-Recovering from Git(Hub) failure Scenario: You try to push and cannot
+Scenario: You try to push and cannot
 What's the problem?
 There are changes on GitHub that you don't have.
 Pull. If the gods smile upon you, merge works. Now push.
@@ -312,7 +308,7 @@ via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
 
 ---
 
-## 
+## Recovering from Git(Hub) failure
 
 Let's create this situation.
 Make sure local Git pane is clear.
@@ -322,9 +318,9 @@ Try to push. You will fail.
 
 via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
 
---
+---
 
-##
+## Recovering from Git(Hub) failure
 
 ```
 jenny@2015-mbp bunny-scarf $ git push & To github.com:jennybc/bunny-scarf.git
@@ -343,7 +339,7 @@ via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
 
 ---
 
-##
+## Recovering from Git(Hub) failure
 
 Look at your Git history.
 You will see a merge commit, where the local and remote changes were reconciled.
@@ -351,9 +347,9 @@ This is best case scenario and is likely with good Git habits (lots of small fre
 
 via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
 
---
+---
 
-## Recovering from git(hub) failure
+## Recovering from Git(Hub) failure
 
 Recovering from Git(Hub) failure Scenario: You pull and get a merge conflict.
 What's the problem?
@@ -365,7 +361,7 @@ via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
 
 ---
 
-## 
+## Recovering from Git(Hub) failure
 
 Let's create this situation.
 Make sure local Git pane is clear.
@@ -374,9 +370,29 @@ Edit & commit to file A locally.
 Make conflicting edit & commit to file A remotely.
 Try to push. You will fail. Try to pull. You will fail. All is fail.
 
+via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
+
 ---
 
-## .gitignore
+## Recovering from Git(Hub) failure
+
+```
+From github.com:jennybc/bunny-scarf
+   958548f..3357952  master     -> origin/master
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+<<<<<<< HEAD
+Wingardium Leviosaaaaaaaa
+=======
+Wing-GAR-dium Levi-O-sa
+>>>>>>> 33579525d88af071268b0a0c64c54f357712589a
+```
+via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
+
+---
+
+# .gitignore
 
 ---
 
