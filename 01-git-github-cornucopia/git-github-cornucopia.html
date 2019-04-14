@@ -39,31 +39,33 @@ GitHub is a website where you can share code with people on the internet. It is 
 
 ## Versions
 
+&lt;img src="img/lego-steps.png" class='centered'&gt;
 
-![](img/lego-steps.png)
-
-(via [Mine Cetinkaya-Rundel](www2.stat.duke.edu/courses/Spring18/Sta199/))
+via [Mine Cetinkaya-Rundel](www2.stat.duke.edu/courses/Spring18/Sta199/)
 
 ---
 
 ## Versions
 
-![](img/lego-steps-commit-messages.png)
+&lt;img src="img/lego-steps-commit-messages.png" class='centered'&gt;
 
-(via [Mine Cetinkaya-Rundel](www2.stat.duke.edu/courses/Spring18/Sta199/))
+via [Mine Cetinkaya-Rundel](www2.stat.duke.edu/courses/Spring18/Sta199/)
 
 ---
 
-## Trying to avoid 
+## What we're trying to avoid 
 
-&lt;img src="img/phd101212s.gif" style="display: block; margin: auto auto auto 0;" /&gt;
+&lt;img src="img/phd101212s.gif" width='40%' class='centered'&gt;
+
+[PhD comics](http://phdcomics.com/comics/archive.php?comicid=1531)
+
 ---
 
 ## What we're doing this morning 
 
 A high-level overview (I'll get more specific in a minute)
 
-1. Make sure everything is set up with your git
+1. Make sure everything is set up on your computer
 2. Fork a GitHub repository (Jenny Bryan's [bingo R package](https://github.com/jennybc/bingo))
 3. Clone it to your computer
 4. Build the package locally 
@@ -77,23 +79,364 @@ A high-level overview (I'll get more specific in a minute)
 
 ## Making sure everything is set up
 
-In your RStudio, you should have a pane that has at least two tabs, one labeled Console and the other Terminal. The Console is just for `R` code, but the `Terminal` is more general, for commandline tools. To check you have git, open the Terminal tab and type 
+In your RStudio, you should have a pane that has at least two tabs, one labeled Console and the other Terminal. The Console is just for `R` code, and the Terminal is more general, for commandline tools. We'll be trying to do everything in the Console, but the Terminal is our fallback for git code. 
+
+Let's first make sure you have the `usethis` package. In your Console, type 
+
+
+```r
+library(usethis)
+```
+
+If you get an error, install the `usethis` package,
+
+
+```r
+install.packages("usethis")
+```
+
+Then, let's check the situation report on your current git/Github status. 
 
 ```{}
-git --version
+git_siterep()
 ```
 
-If nothing comes up, talk to one of us about getting up to speed! Assuming you get something like
+Make sure that the User section at least knows your `Name` and `Email`. If one or both of those things are missing, flag one of us, and/or follow [Ian's day zero prep instructions](https://uncoast-unconf.github.io/uu-2019-day-zero/00-preparation/03-usethis/). 
 
-```{}
-git version 2.10.1 (Apple Git-78)
+---
+
+## Fork and clone a repo
+
+**Forking** a GitHub repository is essentially making your own copy of the code as it stands right now. 
+
+&lt;img src="img/fork.png" width='75%' class='centered'&gt;
+
+
+via [Jenny Bryan and Happy git with R](https://happygitwithr.com/)
+
+---
+
+## Fork and clone a repo
+**Cloning** is getting the files onto your own computer
+
+&lt;img src="img/clone-yours.png" width='75%' class='centered'&gt;
+
+via [Jenny Bryan and Happy git with R](https://happygitwithr.com/)
+
+---
+## Fork and clone a repo
+Usually you do them together,
+
+&lt;img src="img/fork-and-clone.png" width='75%' class='centered'&gt;
+
+
+via [Jenny Bryan and Happy git with R](https://happygitwithr.com/)
+
+---
+
+## Fork and clone a repo
+
+There are several different ways to fork and clone a repo. We'll be following the `usethis` way, using the `create_from_github()` function. This does all the work for us! Run this code in your Console and watch what prints. 
+
+
+```r
+create_from_github("jennybc/bingo", protocol = "https")
 ```
 
-then try 
+---
+
+## The bingo package
+
+You should now have a new RStudio project open, containing the code from the `bingo` package. 
+
+&lt;img src="img/bingo-code.png" width='80%' class='centered'&gt;
+
+---
+
+## The bingo package
+
+You can also go on GitHub to view Jenny Bryan's version of the code, at [https://github.com/jennybc/bingo](https://github.com/jennybc/bingo) and *your* version of the code, at `https://github.com/[whatever your GitHub username is]/bingo`. For example, mine is at [https://github.com/AmeliaMN/bingo](https://github.com/AmeliaMN/bingo).
+
+Right now, all these places look pretty much the same, but we're going to start contributing to the package. 
+
+---
+
+## Build tab
+
+Notice that the RStudio project for `bingo` has a new tab, called Build. This is because our project is for a package. 
+
+&lt;img src="img/build-tab.png" width='80%' class='centered'&gt;
+
+---
+
+## Install and Restart
+
+Let's begin by installing the package locally and restarting our R. Click the "Install and Restart" button and watch what happens in the pane and in the Console. 
+
+
+
+
+---
+
+## Play with the package
+
+This package doesn't do too terribly much, but you can try out some of the functions in the package, like
+
+
+```r
+get_topics()
+```
 
 ```
-git config --global --list
+##  [1] "bad-data"          "Bingo_Flowers"     "boring-meeting"   
+##  [4] "conference-call"   "csama"             "football"         
+##  [7] "july4th"           "manuscript-review" "open-data"        
+## [10] "stat-ecology"      "useR-conf"         "WeeklyJump"
 ```
+
+and then pick a topic to see the cards of, like
+
+
+```r
+get_topic("bad-data")
+```
+
+```
+##  [1] "Blank/null values aren't explained"                
+##  [2] "Data that \"must exist\" does not, in fact, exist" 
+##  [3] "Data that \"cannot exist\" does, in fact, exist"   
+##  [4] "Duplicate rows"                                    
+##  [5] "Metric? Imperial? Ask the dust ..."                
+##  [6] "65,535 or 2,147,483,647 or 4,294,967,295"          
+##  [7] "555-3485 or 867-5309"                              
+##  [8] "1970-01-01\nT00:00:00Z or 1969-12-31\nT23:59:59Z"  
+##  [9] "January 1st, 1900 or January 1st, 1904"            
+## [10] "Data is \"helpfully\" pre-aggregated"              
+## [11] "Aggregates and computed totals don't match"        
+## [12] "Line ending chaos ... \\n vs \\r\\n vs \\r"        
+## [13] "Yo, I hear you like metadata mixed with your data" 
+## [14] "Spreadsheet has exactly 65,536 rows"               
+## [15] "Missing data that passes for real data, eg 0 or 99"
+## [16] "Leading zeroes stripped to convert text to numbers"
+## [17] "Inexplicable outliers"                             
+## [18] "Garbled text suggests encoding problems"           
+## [19] "Data disguised as formatting"                      
+## [20] "Ambiguous American date formats, eg 03/04/16"      
+## [21] "\"Virgin Birth\", ie no provenance"                
+## [22] "Location of 0°N 0°E, ie \"Null Island\""           
+## [23] "Spelling mistakes that reek of hand-typed data"    
+## [24] "US zip codes 12345 or 90210"
+```
+
+---
+
+## Pull request
+
+Our eventual goal is to create a "pull request," to request that the GitHub repo owner (Jenny Bryan) incorporates some changes we have made. 
+
+&lt;img src="img/fork-triangle-happy.png" width='73%' class='centered'&gt;
+
+via [Jenny Bryan and Happy git with R](https://happygitwithr.com/)
+
+---
+
+## Getting ready -- branch
+
+Before we start making changes, we should prepare for eventually making a pull request (often abbreviated PR when people are writing about them). We'll use the `pr_init()` function to do this. 
+
+It's best practice to use a separate "branch" when you make contributions. The main version of the code is hosted in the "master" branch (you can probably see that word in the top right of your git pane) and your contributions might not initially synch up with that version. 
+
+&lt;img src="img/git-branches-1.png" width='30%' class='centered'&gt;
+
+via [tinned-software](https://blog.tinned-software.net/create-and-merge-git-branches/)
+
+---
+
+## Getting ready -- branch
+
+We'll branch off from the master using `pr_init()`. You need to come up with a name for your branch, and that name can be anything you want. 
+
+
+```r
+pr_init("amelia") # this is kind of a bad branch name, you probably want to be more descriptive!
+```
+
+Run some `pr_init()` code in your Console and see what prints. What happened to the top right of your git pane?
+
+
+---
+
+## Making a change
+
+I'm not going to talk about all the pieces of a package-- we'll get to that later today! So for now, just navigate into `bingo/inst/topics` (a folder within a folder in your Files pane) and click on one of the `.R` files there. It's filled with topics for a bingo card. There are a couple ways you could contribute to the package:
+
+- make a whole new bingo card (at least 24 topics!)-- this one is probably best as a group
+- add some topics to an existing bingo card
+- ??
+
+Let's take some time to make a change somewhere in the package. If you're making a new card, you'll need to start a new `.R` file, and if you're adding topics to an existing card, just edit that `.R` file. 
+
+Make sure you save your changes! 
+
+---
+
+## Notice where changes appear
+
+Now that you've saved a change, you should see at least one thing in your git pane. 
+
+&lt;img src="img/bingo-change.png" width='80%' class='centered'&gt;
+
+---
+
+## Commit your change
+
+Now, it's time to "commit" your change. This checks your changes into the git version control system. It's essentially telling git you have done something worth keeping track of. But, don't feel like you have to save this for a big change! In fact, it's best to commit early and often! Click the commit button to get a pane to pop up showing the changes you can potentially commit. 
+
+&lt;img src="img/bingo-commit.png" width='70%' class='centered'&gt;
+
+---
+
+## Commit your change
+
+Select whatever you are interested in committing using the checkboxes. Then, write a "commit message" (a short description of what you've done) in the box that asks for the message, and click Commit. You'll get a bit of a message that indicates you've successfully committed. You can close that message. 
+
+&lt;img src="img/bingo-commit-check.png" width='70%' class='centered'&gt;
+
+---
+
+## Push your changes
+
+Again, there are many ways to push changes to GitHub. We're going to use the `usethis` method. 
+
+
+```r
+pr_push()
+```
+
+---
+
+## Push your changes
+
+Running this code will push your changes to your GitHub repository and initialize a pull request on the main repo (in this case, Jenny Bryan's repo). A browser window will pop up and show you how your pull request looks. If it's good to go, click the green button.  
+
+&lt;img src="img/PR_bingo.png" width='80%' class='centered'&gt;
+
+---
+
+## Not quite ready?
+
+If your pull request isn't quite ready, it might be the case that you need to go back and make some more changes. You can go back to RStudio, make another change, save it, commit it, and `pr_push()` again. 
+
+---
+
+# If we have time...
+
+---
+
+
+# filing effective issues
+
+
+---
+
+## Recovering from Git(Hub) failure
+
+Scenario: You try to push and cannot
+What's the problem?
+There are changes on GitHub that you don't have.
+Pull. If the gods smile upon you, merge works. Now push.
+
+via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
+
+---
+
+## Recovering from Git(Hub) failure
+
+Let's create this situation.
+Make sure local Git pane is clear.
+Make sure local and remote are synced (push, pull).
+Edit &amp; commit to file A locally. Edit &amp; commit to file B remotely.
+Try to push. You will fail.
+
+via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
+
+---
+
+## Recovering from Git(Hub) failure
+
+```
+jenny@2015-mbp bunny-scarf $ git push &amp; To github.com:jennybc/bunny-scarf.git
+ ! [rejected]        master -&gt; master (fetch first)
+error: failed to push some refs to 'git@github.com:jennybc/bunny-scarf.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+Remedy? Do what it says!
+pull, then push ... pull, then push ... pull, then push
+
+via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
+
+---
+
+## Recovering from Git(Hub) failure
+
+Look at your Git history.
+You will see a merge commit, where the local and remote changes were reconciled.
+This is best case scenario and is likely with good Git habits (lots of small frequent commits and merges, no binary files in repo).
+
+via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
+
+---
+
+## Recovering from Git(Hub) failure
+
+Recovering from Git(Hub) failure Scenario: You pull and get a merge conflict.
+What's the problem?
+GitHub can't figure out how to reconcile di s.
+Resolve the conflicts.
+Or abort ... and come back later.
+
+via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
+
+---
+
+## Recovering from Git(Hub) failure
+
+Let's create this situation.
+Make sure local Git pane is clear.
+Make sure local and remote are synced (push, pull).
+Edit &amp; commit to file A locally.
+Make conflicting edit &amp; commit to file A remotely.
+Try to push. You will fail. Try to pull. You will fail. All is fail.
+
+via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
+
+---
+
+## Recovering from Git(Hub) failure
+
+```
+From github.com:jennybc/bunny-scarf
+   958548f..3357952  master     -&gt; origin/master
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Wingardium Leviosaaaaaaaa
+=======
+Wing-GAR-dium Levi-O-sa
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 33579525d88af071268b0a0c64c54f357712589a
+```
+via [Jenny Bryan](https://github.com/jennybc/wtf-2019-rsc)
+
+---
+
+# .gitignore
+
+---
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
