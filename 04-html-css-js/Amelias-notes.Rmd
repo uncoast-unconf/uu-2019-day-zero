@@ -73,3 +73,8 @@ And we can link this in our HTML `<link rel="stylesheet" href="style.css">`
 Yihui claims he only knows two languages: R and JavaScript. JavaScript allows you to program a webpage. Again, we can edit things directly in a web browser. For example, open the browser Console and type some JavaScript code.
 
 ![](img/javascript-style.png)
+
+If you want to know exactly what element you're looking at, you can right-click an element, and select Inspect. Then, right-click the element in the HTML that shows up, select Copy and then Copy Selector.
+
+![](img/copy-selector.png)
+
