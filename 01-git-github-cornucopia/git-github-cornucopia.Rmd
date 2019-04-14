@@ -1,6 +1,7 @@
 ---
 title: "Uncoast Unconf Day-Zero Workshop"
 subtitle: "git and Github cornucopia"
+author: "Amelia McNamara ([AmeliaMN](https://twitter.com/AmeliaMN))"
 date: "2019-04-14"
 output:
   xaringan::moon_reader:
