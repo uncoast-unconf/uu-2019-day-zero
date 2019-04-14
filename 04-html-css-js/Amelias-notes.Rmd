@@ -38,3 +38,10 @@ One magic thing is to right-click on any web page and select "View Source."
 
 ## Another magic thing
 You can also right-click on an element and select "Inspect" to see how any element on a page has been generated. 
+
+## Styling
+
+You can style globally, using css. This doesn't need to be in a separate file, it can just be between `<style>` tags in the `<head>` of your document. For example, we added the styling for `p`, which works globally. 
+
+Another way to style things is with classes. 
+
