@@ -1,0 +1,27 @@
+---
+title: "Amelia's notes"
+author: "Amelia McNamara"
+date: "4/14/2019"
+output: html_document
+---
+
+Yihui said he wasn't going to use slides, but do some live-coding. I decided to take some notes here and commit them to the day 0 repo so they would be available. 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Usually, I would make an html file using SublimeText2, but Yihui showed a way to use an R function to create and open a new HTML document!
+
+```{r}
+file.edit("test.html")
+```
+
+You can serve the file using the `servr` package. 
+
+```{r}
+servr::httw()
+```
+
+If you navigate to `test.html` in your Viewer, you can add code to the file, save, and see it immediately reflected in the served version. 
+
+We started with a text file, which didn't have any tags. But now we're going to start making it more like a real HTML file. 
