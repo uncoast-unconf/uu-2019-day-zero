@@ -57,7 +57,9 @@ h1, h2, h3 {
   font-weight: normal;
   color: #fc9f66;
 }
-
+.remark-slide-content .small p {
+    font-size: 15px;
+}
 .remark-code, .remark-inline-code {
   font-family: Inconsolata, 'Lucida Console', Monaco, monospace;
 }

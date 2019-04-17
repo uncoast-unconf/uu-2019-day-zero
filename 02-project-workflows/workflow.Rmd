@@ -50,9 +50,11 @@ Any individual R process and the associated workspace is disposable.
 
 #### Everything that really matters should be achieved through code that you save. 
 
-<img src=https://whattheyforgot.org/img/if-you-liked-it-you-should-have-saved-the-source-for-it.jpg height="360px"/>
-???
-Saving code – not workspaces – is incredibly important because it is an absolute requirement for reproducibility. 
+<img src=https://whattheyforgot.org/img/if-you-liked-it-you-should-have-saved-the-source-for-it.jpg height="340px"/>
+
+.small[
+via Jenny Bryan's [What They Forgot](https://whattheyforgot.org/)
+]
 ---
 ## Use an IDE
 
@@ -63,7 +65,7 @@ An [integrated development environment](https://en.wikipedia.org/wiki/Integrated
 
 - Popular IDEs include RStudio, Emacs + ESS, vim + Nvim-R, and Visual Studio + RTVS
 
---
+
 <br />
 
 #### Why?
@@ -77,9 +79,6 @@ It helps to eliminate the temptation to develop code directly in the R Console.
 - They use an IDE because it makes it easier to follow standard practices, such as these.
 
 (More on this to come)
-
-???
-best practices = develop reproducible code in a .R or .Rmd file
 
 ---
 ## Always start R with a blank slate
@@ -98,13 +97,15 @@ In RStudio, set this via *Tools* > *Global Options*
 ]
 .pull-right[
 <img src="img/rstudio-workspace.png" height="380px"/>
-]
+.small[
+via Jenny Bryan's [What They Forgot](https://whattheyforgot.org/)
+]]
 ---
 
 
 .left-minus[
 <img src="img/on-and-off.png" height="500px"/>
-]
+] 
 .right-plus[
 ## Restart R often
 
@@ -138,18 +139,15 @@ This line is meant to reset things, either to power-cycle the current analysis o
 <br />
 #### The problem with `rm(list = ls())` is that, given the intent, it does not go far enough.
 
-???
-It’s fairly common to see data analysis scripts that begin with this object-nuking command:
-
-This is highly suggestive of a non-reproducible workflow.
-
-
 ---
 class: inverse, middle, center
 # Project-oriented workflows
 
 <img src="img/mess.jpg" height="400px"/>
 <img src="img/organized.jpg" height="400px"/>
+.small[
+via Jenny Bryan's [What They Forgot](https://whattheyforgot.org/)
+]
 
 ### LPT: Do this as you go, not "tomorrow" 
 
@@ -175,10 +173,6 @@ class: inverse, middle, center
 
 #### Ideally, you don’t hardwire anything about your workflow into your product. 
 
-???
-
-Workflow-related operations should be executed by you interactively, using whatever means is appropriate to your setup, but not built into the scripts themselves.
-
 ---
 background-image: url(https://pics.me.me/look-into-your-hard-drive-and-open-your-mercy-file-7551660.png)
 background-size: 500px
@@ -192,11 +186,6 @@ It’s also unlikely to work for the author one or two years or computers from n
 
 ]
 
-???
-
-Hard-wired, absolute paths, especially when sprinkled throughout the code, make a project brittle. 
-
-Such code does not travel well across time or space.
 
 ---
 background-image: url(https://pics.me.me/look-into-your-hard-drive-and-open-your-mercy-file-7551660.png)
@@ -230,13 +219,7 @@ ggsave(here("figs", "foofy_scatterplot.png"))
 ```
 ]
 
-???
 
-BUT, if you still decide to use setwd() in your scripts, you should at least be very disciplined about it:
-
-Only use setwd() at the very start of a file, i.e. in an obvious and predictable place. If someone has to hand-edit all of these, make it easy for them.
-
-Always set working directory to the same thing, namely to the top-level of the project (not a subdirectory). Always build subsequent paths relative to that.
 ---
 ## Adopt a project-oriented workflow
 
@@ -263,8 +246,6 @@ Always set working directory to the same thing, namely to the top-level of the p
 |-- report.Rmd
 ```
 ]
-???
-Portability: the project can be moved around on your computer or onto other computers and will still "just work".This is the only practical convention that creates reliable, polite behavior across different computers/users/time. This convention is neither new, nor unique to R.
 
 ---
 ## RStudio Projects
@@ -273,6 +254,9 @@ Portability: the project can be moved around on your computer or onto other comp
 .left-third[
 
 <img src=https://jules32.github.io/streamlined-workflows/images/rstudio-project-switching.png height="380px"/>
+.small[
+via Jenny Bryan's [What They Forgot](https://whattheyforgot.org/)
+]
 
 ]
 .right-two-thirds[
@@ -292,29 +276,17 @@ Portability: the project can be moved around on your computer or onto other comp
 
   ]
   
-???
-You can designate a new or existing folder as a Project. 
-
-- RStudio leaves a file, e.g., `name.Rproj`, in the folder to store settings specific to that project. 
-
-You can have multiple Projects going at once!
-
-Double-click on a .Rproj file to open a fresh instance of RStudio.
-
-This allows rapid context switching across several projects, such as an R package, teaching material, and a data analysis. There is no danger of crosstalk between the projects: each has its own R process, global workspace, and working directory.
-
-RStudio knows about recently used Projects. 
-
-Once you decide "I want to do some work in Project K", there are various ways to accelerate the startup process.
-
-Once you are in RStudio, there are several ways to access other Projects you've recently worked in. In the upper right corner is a drop-down menu with various Project- and session-related goodies in it.
-
 ---
 background-image: url(https://pbs.twimg.com/media/DtlqyWZVAAIuylm.jpg:large)
 background-size: 600px
 background-position: 50% 80%
 class: inverse, center
 # Practice "safe paths"
+
+.footnote[
+.small[
+via [Allison Horst](https://twitter.com/allison_horst?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)
+]]
 
 ---
 ## Tips to avoid `setwd()`
@@ -357,8 +329,6 @@ For more, read Jenny Bryan's post
 ](https://github.com/jennybc/here_here).
 ]
 
-???
-here::here() figures out the top-level of your current project using some sane heuristics. It looks at working directory, checks a criterion and, if not satisfied, moves up to parent directory and checks again. Lather, rinse, repeat.
 
 If no criteria match, the current working directory will be used as fallback.
 ---
@@ -405,8 +375,7 @@ class: inverse, center
 #### 1986-01-28_raw-data-from-challenger-o-rings.txt
 ]
 
-???
-What works? What doesn't?
+
 ---
 .left-minus[
 <img src="img/unique-file.png" height="550px"/>
@@ -420,11 +389,7 @@ What works? What doesn't?
 
 #### 3. Plays well with default ordering
 ]
-???
 
-Easy to implement 
-
-Payoffs accumulate as your skills evolve and projects get more complex
 ---
 ## 1. Machine readable
 
@@ -439,13 +404,6 @@ Payoffs accumulate as your skills evolve and projects get more complex
   - `"-"` hyphen used to delimit words so my eyes don't bleed
 
 ![plasmid_delimiters](img/plasmid_delimiters.png)
-
-???
-1. Globbing is the process of expanding a non-specific file name containing a wildcard character into a set of specific file names that exist in storage on a computer, server, or network. A wildcard is a symbol that can stand for one or more characters.
-
-As for reg exp - think of them as search terms
-
-PIC #1: Excerpt of complete file listing
 
 
 ---
@@ -484,12 +442,6 @@ background-position: 90% 95%
 
 <img src="img/human_readable_not_options.png" height="380px"/>
 
-???
-Name contains info on content
-
-Which set of file(name)s do you want at 3 a.m. before a deadline?
-
-"Embrace the slug"
 ---
 ## 3. Plays well with default ordering
 
@@ -514,7 +466,9 @@ From https://twitter.com/donohoe/status/597876118688026624.
 ## Staying organized
 
 <img src="img/files_messy_tidy.png" height="500px"/>
-
+.small[
+via Jenny Bryan's [What They Forgot](https://whattheyforgot.org/)
+]
 ---
 ## A *humane* API for your analysis
 
@@ -602,9 +556,6 @@ class: inverse, center
 #### Ask for help
 
 - Make a reprex
-
-???
-Writing a reprex for the problem you’re encountering is one of the best ways to demonstrate that you are being considerate of the people who are going to help you solve the error(s) in your code.
 
 ---
 ## How to achieve reprex-cellence<sup>1</sup>
